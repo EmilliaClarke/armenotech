@@ -1,0 +1,196 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: "org.yaml", name: "snakeyaml", version: "1.33"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'com.pearson'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+project(":api-tests") {
+    dependencies {
+        api project(":base-api")
+        annotationProcessor 'org.projectlombok:lombok:1.18.20'
+        implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+        implementation 'org.apache.logging.log4j:log4j-api:2.17.1'
+        implementation 'com.google.code.gson:gson:2.8.9'
+        implementation 'org.jsoup:jsoup:1.15.3'
+        implementation 'io.github.openfeign:feign-core:11.8'
+        implementation group: 'org.testng', name: 'testng', version: '7.5'
+        implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+        implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    }
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+static Properties loadProperties(Project testProject, customPropertyFiles) {
+    Properties properties = new Properties()
+    customPropertyFiles.each { path ->
+        if (testProject.file(path).exists()) {
+            testProject.file(path).withReader { f -> properties.load(f) }
+        }
+    }
+
+    properties.putAll(System.properties)
+
+    return properties
+}
+
+def buildCucumberArguments(Project testProject, Properties properties) {
+    String pathToReportDir = testProject.file(PATH_TO_REPORT).path
+    def arguments = ["--plugin", "progress",
+                     // "--plugin", "html:${pathToReportDir}",
+                     "--plugin", "junit:${pathToReportDir}/report.xml",
+                     "--plugin", "json:${pathToReportDir}/report.json",
+                     "--glue", "com.pearson.config"]
+
+    if (properties.containsKey("cucumber.tags")) {
+        properties.get("cucumber.tags").split().each { arguments.addAll(["--tags", it]) }
+    }
+    if (properties.containsKey("cucumber.stepdefs.package")) {
+        properties.get("cucumber.stepdefs.package").split(",").each { arguments.addAll(["--glue", it]) }
+    }
+    arguments.addAll(["--threads", properties.containsKey("cucumber.threads") ? properties.get("cucumber.threads") : "1"])
+
+    if (properties.containsKey("cucumber.feature.path")) {
+        arguments.add(testProject.file(properties.get("cucumber.feature.path")).path)
+    }
+
+    return arguments
+}
+
+def buildJvmArguments(Project testProject, Properties properties) {
+    def arguments = ["-Dlog4j.configurationFile=" + properties.get("cucumber.log4j2.config.file"),
+                     "-Dfile.encoding=UTF-8",
+                     "-Dlocal.properties.path=" + testProject.file(PATH_TO_LOCAL_PROPERTIES).path,
+                     "-Dcucumber.properties.path=" + testProject.file(PATH_TO_CUCUMBER_PROPERTIES).path,
+                     "-Dautomation.properties.path=" + testProject.file(PATH_TO_AUTOMATION_PROPERTIES).path,
+                     "-Dreport.path=" + testProject.file(PATH_TO_REPORT).path,
+                     "-Xdebug"]
+
+    if (properties.get("debug.enabled")) {
+        arguments.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005")
+    } else {
+        arguments.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005")
+    }
+
+    if (testProject != project) {
+        arguments.add("-Dtest.project.name=" + testProject.name)
+    }
+
+    return arguments
+}
+
+def convertToPropertyLines(Map map, String keyPrefix = "") {
+    map.entrySet().collectMany {
+        it.value instanceof Map ? convertToPropertyLines(it.value, "$it.key.") : ["${keyPrefix}${it.key}=${it.value}"]
+    }
+}
+
+static void writePropertiesToFile(propertyLines, file) {
+    file.write(propertyLines.join(System.getProperty("line.separator")))
+}
+
+Map loadEnvironmentsConfig(Project testProject) {
+    String yamlConfigPath = testProject.file(String.format(PATH_TO_ENVIRONMENTS_YAML))
+
+    try {
+        println "Loading environments config from path: ${yamlConfigPath}\n"
+        return new org.yaml.snakeyaml.Yaml().load(new File(yamlConfigPath).newInputStream())
+    } catch (Exception ex) {
+        throw new IllegalStateException("Environments config can't be loaded from path=${yamlConfigPath}", ex)
+    }
+}
+
+Map loadEnvironmentConfig(Project testProject, Properties properties) {
+    Map environmentsConfig = loadEnvironmentsConfig(testProject)
+    String environment = properties.getProperty("environment", "local")
+
+    if (!environmentsConfig.containsKey("environments") || !environmentsConfig["environments"].containsKey(environment)) {
+        throw new IllegalStateException("Environments config does not contain environment with name " + environment)
+    }
+
+    return environmentsConfig["environments"][environment]
+}
+
+private void filterAndWritePropertiesToFile(Project testProject, def propertyLines,
+                                            def filterPredicate, def pathToFile) {
+    def projectPathToFile = testProject.file(pathToFile)
+    println "Generating configuration file: ${projectPathToFile}\n"
+    writePropertiesToFile(propertyLines.findAll(filterPredicate), projectPathToFile)
+}
+
+void generateConfiguration(Project testProject) {
+    Properties properties = loadProperties(testProject, [PATH_TO_LOCAL_PROPERTIES])
+    def envPropertyLines = convertToPropertyLines(loadEnvironmentConfig(testProject, properties))
+    envPropertyLines = extendListOfTags(envPropertyLines)
+    filterAndWritePropertiesToFile(testProject, envPropertyLines, { it.startsWith("cucumber") }, PATH_TO_CUCUMBER_PROPERTIES)
+    filterAndWritePropertiesToFile(testProject, envPropertyLines, { !it.startsWith("cucumber") }, PATH_TO_AUTOMATION_PROPERTIES)
+}
+
+static def extendListOfTags(def propertyLines) {
+    if (Objects.nonNull(System.getProperty("cucumber.additional.tags"))) {
+        def tags = propertyLines.find { prop -> prop.toString().startsWith("cucumber.tags") }
+        def extendedTags = "${tags} ${System.getProperty("cucumber.additional.tags")}"
+        propertyLines << extendedTags
+        propertyLines.remove(tags)
+        return propertyLines
+    } else propertyLines
+}
+
+void cleanReportDir(Project testProject) {
+    testProject.delete(PATH_TO_REPORT)
+    testProject.mkdir(PATH_TO_REPORT)
+}
+
+void setDefaultPropertyValues(Properties properties) {
+    properties.putIfAbsent("debug.enabled", false)
+}
+
+void executeTests(Project testProject) {
+    generateConfiguration(testProject)
+    Properties properties = loadProperties(testProject, [PATH_TO_CUCUMBER_PROPERTIES,
+                                                         PATH_TO_AUTOMATION_PROPERTIES,
+                                                         PATH_TO_LOCAL_PROPERTIES])
+    setDefaultPropertyValues(properties)
+    cleanReportDir(testProject)
+
+    javaexec {
+        main = "io.cucumber.core.cli.Main"
+        classpath = testProject.configurations.cucumberRuntime + testProject.sourceSets.main.output + testProject.sourceSets.test.output
+        jvmArgs = buildJvmArguments(testProject, properties)
+        args = buildCucumberArguments(testProject, properties)
+        systemProperties System.properties
+
+    }
+}
+
+task runtests() {
+    println "Running of tests for $project.name project is started"
+    dependsOn ':base-api:build'
+    dependsOn assemble, compileTestJava
+    doLast {
+        println "Running of tests for ${project.name} project is started"
+        executeTests(project)
+        println "Running of tests for ${project.name} project is finished"
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "utf-8"
+}

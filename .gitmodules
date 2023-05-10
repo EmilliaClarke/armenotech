@@ -1,0 +1,3 @@
+[submodule "akami-core"]
+	path = base-api
+	url = https://github.com/EmilliaClarke/base-api.git

@@ -1,0 +1,56 @@
+{
+  "type": "SUBSCRIPTION",
+  "subscriptionProduct": {
+    "id": "testAuditLogs2",
+    "type": "DEFAULT",
+    "ppid": "testAuditLogs2",
+    "name": [
+      {
+        "locale": "en_US",
+        "value": "New Component"
+      }
+    ],
+    "description": [
+      {
+        "locale": "en_US",
+        "value": "New Component"
+      }
+    ],
+    "variants": [
+      {
+        "id": "varianttestlogs2",
+        "name": [
+          {
+            "locale": "en_US",
+            "value": "New Component"
+          }
+        ],
+        "description": [
+          {
+            "locale": "en_US",
+            "value": "New Component"
+          }
+        ],
+        "billingPeriod": "MONTH",
+        "priceRows": [
+          {
+            "currency": "USD",
+            "price": "10331",
+            "startTime": "11/31/2010 23:59:29",
+            "endTime": "01/31/2032 23:59:29"
+          }
+        ],
+        "availabilities": [
+          {
+            "country": "US",
+            "site": "mojo",
+            "taxCode": "N0212",
+            "onlineDate": "2016-07-01",
+            "offlineDate": "2021-07-31",
+            "status": "UNAPPROVED"
+          }
+        ]
+      }
+    ]
+  }
+}
