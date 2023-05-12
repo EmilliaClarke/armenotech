@@ -18,4 +18,4 @@ registerData.setPassword("password")
 registerData.setFirstName("firstName")
 registerData.setLastName("lastName")
 
-return iesPearsonCustomerFacade.registerPearsonCustomer(registerData)
+return CustomerFacade.registerCustomer(registerData)

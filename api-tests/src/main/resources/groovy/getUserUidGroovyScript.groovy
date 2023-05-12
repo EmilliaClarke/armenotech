@@ -11,4 +11,4 @@ import de.hybris.platform.site.BaseSiteService
 
 baseSiteService.setCurrentBaseSite("localization", false)
 
-return iesPearsonCustomerFacade.getCustomerByUsername("userId").uid
+return CustomerFacade.getCustomerByUsername("userId").uid

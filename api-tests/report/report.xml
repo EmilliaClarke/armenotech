@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="5" time="26.057">
+    <testcase classname="Armenotech payments info" name="User gets 200 STC for valid request" time="8.695">
+        <system-out>
+            <![CDATA[Given get payments by country: WWC and asset: ATUSD id......................passed
+And validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Armenotech payments info" name="User gets 200 STC for valid request 2" time="3.337">
+        <system-out>
+            <![CDATA[Given get payments by country: Spain and asset: ATUAH id....................passed
+And validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Armenotech payments info" name="User gets 200 STC for valid request 3" time="0.253">
+        <system-out>
+            <![CDATA[Given get payments by country: CHL and asset: ATCLP id......................passed
+And validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Armenotech payments info" name="User gets 200 STC for empty request" time="10.061">
+        <system-out>
+            <![CDATA[Given get payments by country:  and asset:  id..............................passed
+And validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema.passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Armenotech payments info" name="User gets 405 STC for invalid post" time="0.691">
+        <system-out>
+            <![CDATA[Given send invalid post method to get payments by country: WWC and asset: ATUSD id.passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>

@@ -1,0 +1,338 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2023-05-12T09:06:22.179Z",
+        "line": 9,
+        "name": "User gets 200 STC for valid request",
+        "description": "",
+        "id": "armenotech-payments-info;user-gets-200-stc-for-valid-request",
+        "after": [
+          {
+            "result": {
+              "duration": 2003900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kratos.core.hooks.CommonHooks.delete()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8535607300,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "get payments by country: WWC and asset: ATUSD id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "WWC",
+                  "offset": 25
+                },
+                {
+                  "val": "ATUSD",
+                  "offset": 40
+                }
+              ],
+              "location": "com.pearson.stepDefs.TestScenarioStepDefs.get_payments_by_country_asset(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 72808000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema",
+            "match": {
+              "arguments": [
+                {
+                  "val": "json/schema/getPaymentyCountryAssetValidating.json",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kratos.core.stepdefs.CommonStepDefs.validate_response_via_path_json_schema(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CI"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-05-12T09:06:30.889Z",
+        "line": 13,
+        "name": "User gets 200 STC for valid request",
+        "description": "",
+        "id": "armenotech-payments-info;user-gets-200-stc-for-valid-request",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kratos.core.hooks.CommonHooks.delete()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3326235400,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "get payments by country: Spain and asset: ATUAH id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Spain",
+                  "offset": 25
+                },
+                {
+                  "val": "ATUAH",
+                  "offset": 42
+                }
+              ],
+              "location": "com.pearson.stepDefs.TestScenarioStepDefs.get_payments_by_country_asset(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8974000,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema",
+            "match": {
+              "arguments": [
+                {
+                  "val": "json/schema/getPaymentyCountryAssetValidating.json",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kratos.core.stepdefs.CommonStepDefs.validate_response_via_path_json_schema(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CI"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-05-12T09:06:34.235Z",
+        "line": 17,
+        "name": "User gets 200 STC for valid request",
+        "description": "",
+        "id": "armenotech-payments-info;user-gets-200-stc-for-valid-request",
+        "after": [
+          {
+            "result": {
+              "duration": 998200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kratos.core.hooks.CommonHooks.delete()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 231290800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "get payments by country: CHL and asset: ATCLP id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "CHL",
+                  "offset": 25
+                },
+                {
+                  "val": "ATCLP",
+                  "offset": 40
+                }
+              ],
+              "location": "com.pearson.stepDefs.TestScenarioStepDefs.get_payments_by_country_asset(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 12965100,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema",
+            "match": {
+              "arguments": [
+                {
+                  "val": "json/schema/getPaymentyCountryAssetValidating.json",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kratos.core.stepdefs.CommonStepDefs.validate_response_via_path_json_schema(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CI"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-05-12T09:06:34.504Z",
+        "line": 21,
+        "name": "User gets 200 STC for empty request",
+        "description": "",
+        "id": "armenotech-payments-info;user-gets-200-stc-for-empty-request",
+        "after": [
+          {
+            "result": {
+              "duration": 999000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kratos.core.hooks.CommonHooks.delete()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 9951691100,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "get payments by country:  and asset:  id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "",
+                  "offset": 25
+                },
+                {
+                  "val": "",
+                  "offset": 37
+                }
+              ],
+              "location": "com.pearson.stepDefs.TestScenarioStepDefs.get_payments_by_country_asset(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 105716300,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "validate response via json/schema/getPaymentyCountryAssetValidating.json jsonSchema",
+            "match": {
+              "arguments": [
+                {
+                  "val": "json/schema/getPaymentyCountryAssetValidating.json",
+                  "offset": 22
+                }
+              ],
+              "location": "com.kratos.core.stepdefs.CommonStepDefs.validate_response_via_path_json_schema(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CI"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-05-12T09:06:44.576Z",
+        "line": 25,
+        "name": "User gets 405 STC for invalid post",
+        "description": "",
+        "id": "armenotech-payments-info;user-gets-405-stc-for-invalid-post",
+        "after": [
+          {
+            "result": {
+              "duration": 997200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.kratos.core.hooks.CommonHooks.delete()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 687161200,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "send invalid post method to get payments by country: WWC and asset: ATUSD id",
+            "match": {
+              "arguments": [
+                {
+                  "val": "WWC",
+                  "offset": 53
+                },
+                {
+                  "val": "ATUSD",
+                  "offset": 68
+                }
+              ],
+              "location": "com.pearson.stepDefs.TestScenarioStepDefs.post_invalid_payments_by_country_asset(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@CI"
+          }
+        ]
+      }
+    ],
+    "name": "Armenotech payments info",
+    "description": "  AS a user I\n  I WANT to get valid response\n  SO THAT I can proceed working with app correctly",
+    "id": "armenotech-payments-info",
+    "keyword": "Feature",
+    "uri": "file:api-tests/src/test/resources/features/TestEndpoint.feature",
+    "tags": [
+      {
+        "name": "@CI",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

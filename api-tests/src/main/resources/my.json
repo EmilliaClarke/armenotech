@@ -1,0 +1,4548 @@
+{
+  "receive": {
+    "ATBRL": {
+      "fields": {
+        "dd54b98f-3a15-4ea7-a2a9-6bc2bbc7d093:55fc85f2-32b3-49bb-b6fd-c99c11c604cd": {
+          "fields": {
+            "billing_address": {
+              "description": "Sender's address",
+              "weight": 1
+            },
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 2
+            },
+            "billing_state": {
+              "description": "Sender's state",
+              "weight": 3
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 4
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_first_name": {
+              "description": "First name",
+              "weight": 5
+            },
+            "from_id_details_cpf": {
+              "description": "CPF number",
+              "weight": 6
+            },
+            "from_last_name": {
+              "description": "Last name",
+              "weight": 7
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "dd54b98f-3a15-4ea7-a2a9-6bc2bbc7d093:55fc85f2-32b3-49bb-b6fd-c99c11c604cd",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 20,
+          "max_amount": 15000,
+          "rate": 1,
+          "direction": "in",
+          "label": "PIX",
+          "logo_url": "https://fpf-assets.armenotech.com/pix-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/pix-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6": {
+          "guid": "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6",
+          "fee_fixed_min": 1,
+          "fee_percent_min": 16,
+          "fee_fixed_max": 1,
+          "fee_percent_max": 16,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 10,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 31.97,
+          "max_amount": 30865.3,
+          "rate": 0.18,
+          "direction": "out",
+          "label": "Some label",
+          "logo_url": "test_logo",
+          "mobile_logo_url": "mobile_logo",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          }
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6"
+            ]
+          },
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "dd54b98f-3a15-4ea7-a2a9-6bc2bbc7d093:55fc85f2-32b3-49bb-b6fd-c99c11c604cd"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATCLP": {
+      "fields": {
+        "1b50ad7d-2589-438c-b50e-323b07a3754d:b4b2a5fd-c119-490d-9db7-8c0c225dd77c": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_id_details": {
+              "description": "Customer ID"
+            },
+            "to_id_type": {
+              "description": "Customer ID type",
+              "choices": [
+                "RUT",
+                "RUN",
+                "PAS",
+                "CE",
+                "PP"
+              ]
+            }
+          },
+          "guid": "1b50ad7d-2589-438c-b50e-323b07a3754d:b4b2a5fd-c119-490d-9db7-8c0c225dd77c",
+          "fee_fixed": 0,
+          "fee_percent": 1,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 990.09,
+          "max_amount": 1195247.52,
+          "rate": 1,
+          "direction": "in",
+          "label": "Chile",
+          "logo_url": "https://fpf-assets.armenotech.com/cash-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/cash-icon.svg",
+          "payment_group": "CASH",
+          "payment_group_name": "cash collection",
+          "delivery_currency": "iso4217:CLP",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "7289cfbb-1895-48f3-8d79-53836d7de4db:53f4e7ea-97f6-4755-9cb6-74ba3299d588": {
+          "fields": {
+            "bank_code": {
+              "description": "Bank",
+              "choices": [
+                "001:Banco de Chile - Edwards",
+                "009:Banco Internacional",
+                "012:Banco Estado (Banco del Estado de Chile)",
+                "014:Scotiabank",
+                "016:BCI (Bco de Credito e Inv)",
+                "017:Banco do Brasil",
+                "027:Itau-Corpbanca",
+                "028:Banco Bice",
+                "031:Hsbc Bank",
+                "035:Banco Santiago",
+                "037:Banco Santander",
+                "039:Itau Chile",
+                "041:JP Morgan Chase Bank N.A.",
+                "043:Banco de La Nacion Argentina",
+                "045:The Bank of Tokyo-Mitsubishi Ufj, Ltd",
+                "049:Banco Security",
+                "051:Banco Falabella",
+                "052:Deutsche Bank (Chile)",
+                "053:Banco Ripley",
+                "054:Rabobank",
+                "055:Banco Consorcio",
+                "056:Banco Penta",
+                "057:Banco Paris",
+                "059:Banco Ptg Pactual",
+                "099:Banco Nuevo",
+                "152:Prepago Los Heroes",
+                "504:BBVA (Bco Bilbao Vizcaya Arg)",
+                "507:Banco del Desarrollo",
+                "672:Coopeuch"
+              ],
+              "weight": 1
+            },
+            "benef_ac_type": {
+              "description": "Account Type",
+              "choices": [
+                "Current account",
+                "Savings account",
+                "Vista",
+                "Rut",
+                "Salary Account"
+              ],
+              "weight": 2
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "Beneficiary Account Number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 4
+            },
+            "to_id_details": {
+              "description": "Customer ID",
+              "weight": 5
+            },
+            "to_id_type": {
+              "description": "Customer ID Type",
+              "choices": [
+                "RUT",
+                "RUN",
+                "PAS",
+                "CE"
+              ],
+              "weight": 6
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 7
+            }
+          },
+          "guid": "7289cfbb-1895-48f3-8d79-53836d7de4db:53f4e7ea-97f6-4755-9cb6-74ba3299d588",
+          "fee_fixed": 0,
+          "fee_percent": 2,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 800,
+          "max_amount": 6440720,
+          "rate": 1,
+          "direction": "out",
+          "label": "Bank Account",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:CLP",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "choices": [
+                "qaw",
+                "gfgfhh"
+              ],
+              "hidden": true,
+              "weight": 1,
+              "hint": "Hint for field"
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+          "fee_fixed": 1,
+          "fee_percent": 5,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 4,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 961.53,
+          "max_amount": 360576.92,
+          "rate": 0.002,
+          "direction": "in",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "7289cfbb-1895-48f3-8d79-53836d7de4db:53f4e7ea-97f6-4755-9cb6-74ba3299d588"
+            ]
+          },
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "1b50ad7d-2589-438c-b50e-323b07a3754d:b4b2a5fd-c119-490d-9db7-8c0c225dd77c",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATKZT": {
+      "fields": {
+        "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          },
+          "guid": "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba",
+          "fee_fixed": 1,
+          "fee_percent": 1,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1684.51,
+          "max_amount": 1683502.69,
+          "rate": 0.003,
+          "direction": "out",
+          "label": "",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATPEN": {
+      "fields": {
+        "7289cfbb-1895-48f3-8d79-53836d7de4db:655a176e-576b-49cd-9df6-09f9c957c8f1": {
+          "fields": {
+            "account_digit": {
+              "description": "CCI Number",
+              "weight": 5
+            },
+            "bank_code": {
+              "description": "Bank Code",
+              "choices": [
+                "0001:Banco Continental",
+                "0002:Banco de Credito",
+                "0003:Interbank",
+                "0004:Scotiabank",
+                "0005:Banco de Comercio",
+                "0006:Banco Interamericano de Finanzas (BanBif)",
+                "0007:Banco Pichincha",
+                "0008:Citibank",
+                "0009:MiBanco",
+                "0010:Scotiabank",
+                "0011:Banco GNB",
+                "0012:Banco Falabella",
+                "0013:Banco Ripley",
+                "0014:Banco Santander",
+                "0015:Banco Azteca",
+                "0016:Banco Cencosud",
+                "0017:ICBC PERU BANK",
+                "0018:Banco de la Nación",
+                "0019:Caja Arequipa",
+                "0020:Caja Cusco",
+                "0021:Caja Huancayo",
+                "0022:Caja Maynas",
+                "0023:Caja Metropolitana",
+                "0024:Caja Municipal Ica",
+                "0025:Caja Piura",
+                "0026:Caja Sullana",
+                "0027:Caja Tacna",
+                "0028:Caja Trujillo"
+              ],
+              "weight": 6
+            },
+            "benef_ac_type": {
+              "description": "Account Type",
+              "choices": [
+                "Current account",
+                "Savings account"
+              ],
+              "weight": 7
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "Beneficiary Account Number",
+              "weight": 1,
+              "hint": "The “No. account” must contain: 13 digits for Current Account or Master Account and 14 digits for Savings Account"
+            },
+            "to_address": {
+              "description": "City / Town",
+              "weight": 8
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 3
+            },
+            "to_id_details": {
+              "description": "Customer ID",
+              "weight": 9
+            },
+            "to_id_type": {
+              "description": "Customer ID Type",
+              "choices": [
+                "DNI",
+                "PAS",
+                "CE",
+                "RUC"
+              ],
+              "weight": 2
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 4
+            }
+          },
+          "guid": "7289cfbb-1895-48f3-8d79-53836d7de4db:655a176e-576b-49cd-9df6-09f9c957c8f1",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0.5,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 15.5,
+          "max_amount": 30000.5,
+          "rate": 1,
+          "direction": "out",
+          "label": "Bank Account",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:PEN",
+          "country_code": "PER",
+          "customer_kind": "both"
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "7289cfbb-1895-48f3-8d79-53836d7de4db:655a176e-576b-49cd-9df6-09f9c957c8f1"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATUAH": {
+      "fields": {
+        "06d34870-a9d3-4baa-afce-995c1f385d1d:99efe6ec-1f3d-4adb-9bca-1a69df7f60c6": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 1
+            }
+          },
+          "guid": "06d34870-a9d3-4baa-afce-995c1f385d1d:99efe6ec-1f3d-4adb-9bca-1a69df7f60c6",
+          "fee_fixed": 1,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 29999,
+          "rate": 1,
+          "direction": "out",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "165aafb8-d3e7-47dd-8c3b-8445bc308d87:657eba0c-14d4-4e01-b2f1-4df3a887e541": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number"
+            }
+          },
+          "guid": "165aafb8-d3e7-47dd-8c3b-8445bc308d87:657eba0c-14d4-4e01-b2f1-4df3a887e541",
+          "fee_fixed": 0,
+          "fee_percent": 0.7,
+          "customer_fee_fixed": 10,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 276.61,
+          "max_amount": 159920.55,
+          "rate": 3.79,
+          "direction": "out",
+          "label": "Visa / MC\t",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:RUB",
+          "country_code": "RUS",
+          "customer_kind": "both"
+        },
+        "165aafb8-d3e7-47dd-8c3b-8445bc308d87:84ec6c7d-69d1-4283-96b8-5275c577cd22": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 1
+            }
+          },
+          "guid": "165aafb8-d3e7-47dd-8c3b-8445bc308d87:84ec6c7d-69d1-4283-96b8-5275c577cd22",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 1.5,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 6.09,
+          "max_amount": 253807.1,
+          "rate": 1,
+          "direction": "out",
+          "label": "Visa / MC\t",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "377af087-351c-4d6a-88e5-b7f0a819fa99:c00a7380-ae6a-404b-89e1-20d9afd705bf": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "377af087-351c-4d6a-88e5-b7f0a819fa99:c00a7380-ae6a-404b-89e1-20d9afd705bf",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 180,
+          "max_amount": 35000,
+          "rate": 1,
+          "direction": "out",
+          "label": "",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "in",
+          "label": "Test Driver",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8",
+          "fee_fixed": 1,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "out",
+          "label": "Test Driver",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "choices": [
+                "qaw",
+                "gfgfhh"
+              ],
+              "hidden": true,
+              "weight": 1,
+              "hint": "Hint for field"
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+          "fee_fixed": 0.2,
+          "fee_percent": 5,
+          "customer_fee_fixed": 0.3,
+          "customer_fee_percent": 7,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 62.02,
+          "max_amount": 23364.2,
+          "rate": 0.03,
+          "direction": "in",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6": {
+          "guid": "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6",
+          "fee_fixed_min": 1,
+          "fee_percent_min": 16,
+          "fee_fixed_max": 1,
+          "fee_percent_max": 16,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 10,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 186.29,
+          "max_amount": 185186.29,
+          "rate": 0.03,
+          "direction": "out",
+          "label": "Some label",
+          "logo_url": "test_logo",
+          "mobile_logo_url": "mobile_logo",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          }
+        },
+        "r:deb95dae-24df-4fd0-84f1-ee2104514c22": {
+          "guid": "r:deb95dae-24df-4fd0-84f1-ee2104514c22",
+          "fee_fixed_min": 0.4,
+          "fee_percent_min": 3,
+          "fee_fixed_max": 0.7,
+          "fee_percent_max": 3,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 4,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 2.08,
+          "max_amount": 31250,
+          "rate": 1,
+          "direction": "out",
+          "label": "",
+          "logo_url": "logo.com",
+          "mobile_logo_url": "mobilelogo.com",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both",
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 1
+            }
+          }
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "06d34870-a9d3-4baa-afce-995c1f385d1d:99efe6ec-1f3d-4adb-9bca-1a69df7f60c6",
+              "377af087-351c-4d6a-88e5-b7f0a819fa99:c00a7380-ae6a-404b-89e1-20d9afd705bf",
+              "165aafb8-d3e7-47dd-8c3b-8445bc308d87:84ec6c7d-69d1-4283-96b8-5275c577cd22",
+              "165aafb8-d3e7-47dd-8c3b-8445bc308d87:657eba0c-14d4-4e01-b2f1-4df3a887e541",
+              "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8",
+              "r:deb95dae-24df-4fd0-84f1-ee2104514c22",
+              "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6"
+            ]
+          },
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATUSD": {
+      "fields": {
+        "05bac156-c20c-40bd-8bdf-d177224d905f:b249b395-7bce-427b-b7df-52053f10818a": {
+          "fields": {
+            "benef_bank_iban": {
+              "description": "Beneficiary IBAN",
+              "weight": 6
+            },
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 7
+            },
+            "billing_street": {
+              "description": "Street",
+              "weight": 8
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 1
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "remit_purpose": {
+              "description": "Purpose",
+              "choices": [
+                "Accounting services",
+                "Advertising & market research services",
+                "Alimony",
+                "Annuities",
+                "Branch profits",
+                "Business Travel Payments",
+                "Capital payments by immigrants",
+                "Commission and fees for financial services",
+                "Commission or brokerage",
+                "Computer-related services",
+                "Cultural and recreational services",
+                "Disposal of copyrights",
+                "Disposal of franchises and trademarks",
+                "Disposal of patents and inventions",
+                "Disposal of patterns and designs",
+                "Dividends",
+                "Donations and aid to Government",
+                "Donations and aid to private sector",
+                "Donations and gifts",
+                "Educational services",
+                "Inheritances",
+                "Legal services",
+                "Management consulting services",
+                "Managerial services",
+                "Medical and dental services",
+                "Mortgage repayments",
+                "Operational leasing",
+                "Payment for Government Services",
+                "Pensions",
+                "Personal Travel Payments",
+                "Public relation services",
+                "Rental",
+                "Sale of bonds",
+                "Sale of money market instruments",
+                "Sale of mutual funds or collective investment schemes",
+                "Sale of overseas property",
+                "Sale of shares",
+                "Tax - Income tax",
+                "Tax - Other",
+                "Tax - VAT refunds",
+                "Tuition fees"
+              ],
+              "weight": 2
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_country": {
+              "description": "Delivery country",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 4
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 5
+            }
+          },
+          "guid": "05bac156-c20c-40bd-8bdf-d177224d905f:b249b395-7bce-427b-b7df-52053f10818a",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 4.58,
+          "max_amount": 4589.47,
+          "rate": 435.78,
+          "direction": "out",
+          "label": "Senegal",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:XOF",
+          "country_code": "SEN",
+          "customer_kind": "both"
+        },
+        "06360618-e442-41e4-8140-e95b051b333b:5d40cd5a-f57c-410e-a4ed-ef5f51286f04": {
+          "fields": {
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 1
+            },
+            "billing_street": {
+              "description": "Street",
+              "weight": 2
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 3
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "description": "Country",
+              "weight": 4
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 5
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "06360618-e442-41e4-8140-e95b051b333b:5d40cd5a-f57c-410e-a4ed-ef5f51286f04",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 5,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "0e4d1b1d-d7aa-4f56-ade5-98775400ee4d:6c290fea-c840-478f-af6c-6f8594384c66": {
+          "fields": {
+            "billing_address": {
+              "description": "Sender's address",
+              "weight": 7,
+              "hint": "Sender's address"
+            },
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 8
+            },
+            "billing_state": {
+              "description": "Sender's state",
+              "choices": [
+                "Acre, AC",
+                "Alagoas, AL",
+                "Amapá, AP",
+                "Amazonas, AM",
+                "Bahia, BA",
+                "Ceará, CE",
+                "Espírito Santo, ES",
+                "Goiás, GO",
+                "Maranhão, MA",
+                "Mato Grosso, MT",
+                "Mato Grosso do Sul, MS",
+                "Minas Gerais, MG",
+                "Pará, PA",
+                "Paraíba, PB",
+                "Paraná, PR",
+                "Pernambuco, PE",
+                "Piauí, PI",
+                "Rio de Janeiro, RJ",
+                "Rio Grande do Norte, RN",
+                "Rio Grande do Sul, RS",
+                "Rondônia, RO",
+                "Roraima, RR",
+                "Santa Catarina, SC",
+                "São Paulo, SP",
+                "Sergipe, SE",
+                "Tocantins, TO",
+                "Distrito Federal, DF"
+              ],
+              "weight": 1
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 3
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_first_name": {
+              "description": "First name",
+              "weight": 2
+            },
+            "from_id_details_cpf": {
+              "description": "CPF number",
+              "weight": 4
+            },
+            "from_last_name": {
+              "description": "Last name",
+              "weight": 5
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 6
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "0e4d1b1d-d7aa-4f56-ade5-98775400ee4d:6c290fea-c840-478f-af6c-6f8594384c66",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 3.98,
+          "max_amount": 2988.04,
+          "rate": 5.02,
+          "direction": "in",
+          "label": "BRL",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "21a935f2-b180-4bb8-98a2-aacbe71a5434:ffc9168d-3f35-469d-a47a-cf491a759e6e": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_crypto_account": {
+              "description": "Beneficiary blockchain account",
+              "weight": 1
+            }
+          },
+          "guid": "21a935f2-b180-4bb8-98a2-aacbe71a5434:ffc9168d-3f35-469d-a47a-cf491a759e6e",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 7,
+          "digits_asset": 2,
+          "min_amount": 2,
+          "max_amount": 5000,
+          "rate": 1,
+          "direction": "out",
+          "label": "USDT",
+          "logo_url": "https://fpf-assets.armenotech.com/tether-usdt-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/tether-usdt-icon.svg",
+          "payment_group": "CRYPTO",
+          "payment_group_name": "crypto",
+          "delivery_currency": "eth:USDT",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:16d54b3f-cf0d-488a-897f-c593393032b0": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_name": {
+              "description": "Bank ",
+              "choices": [
+                "Agribank",
+                "Asia Commercial Bank",
+                "BIDV Bank",
+                "DongA Bank",
+                "Eximbank",
+                "Sacombank",
+                "Techcombank",
+                "Vietcombank",
+                "Vietinbank"
+              ]
+            }
+          },
+          "guid": "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:16d54b3f-cf0d-488a-897f-c593393032b0",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 4.31,
+          "max_amount": 12932.42,
+          "rate": 23197.5,
+          "direction": "in",
+          "label": "Vietnam",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:VND",
+          "country_code": "VNM",
+          "customer_kind": "both"
+        },
+        "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:620b22a3-e44d-4ccb-88fe-5eae7b6d1d87": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "beneficiary account",
+              "weight": 1
+            },
+            "to_bank_name": {
+              "description": "target bank name",
+              "choices": [
+                "AFFIN BANK BERHAD / AFFIN ISLAMIC BANK",
+                "ALLIANCE BANK",
+                "AMBANK BERHAD",
+                "BANK ISLAM MALAYSIA",
+                "BANK RAKYAT MALAYSIA BERHAD",
+                "BANK SIMPANAN NASIONAL BERHAD",
+                "CIMB Bank",
+                "CITI Bank",
+                "Hong Leong Bank",
+                "HSBC BANK MALAYSIA BERHAD",
+                "Maybank Berhad",
+                "OCBC BANK",
+                "Public Bank",
+                "RHB Bank",
+                "STANDARD CHARTERED BANK",
+                "UNITED OVERSEAS BANK BERHAD"
+              ],
+              "weight": 2
+            },
+            "to_first_name": {
+              "description": "beneficiary first name",
+              "weight": 3
+            },
+            "to_last_name": {
+              "description": "beneficiary last name",
+              "weight": 4
+            }
+          },
+          "guid": "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:620b22a3-e44d-4ccb-88fe-5eae7b6d1d87",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 14.79,
+          "max_amount": 14792.89,
+          "rate": 3.38,
+          "direction": "out",
+          "label": "Malaysia",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:MYR",
+          "country_code": "MYS",
+          "customer_kind": "both"
+        },
+        "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:74777d90-892d-4aa4-a70f-329f6f3c7a90": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "beneficiary account",
+              "weight": 6
+            },
+            "to_bank_name": {
+              "description": "target bank name",
+              "choices": [
+                "Bank Central Asia",
+                "Bank Mandiri",
+                "Bank Negara Indonesia",
+                "Bank Rakyat Indonesia"
+              ],
+              "weight": 7
+            },
+            "to_first_name": {
+              "description": "beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "beneficiary last name",
+              "weight": 2
+            }
+          },
+          "guid": "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:74777d90-892d-4aa4-a70f-329f6f3c7a90",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 6.87,
+          "max_amount": 13753.36,
+          "rate": 14541.9,
+          "direction": "out",
+          "label": "Indonesia",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:IDR",
+          "country_code": "IDN",
+          "customer_kind": "both"
+        },
+        "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:ea0c330d-8ed1-4eda-86df-559c55d61429": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_name": {
+              "description": "Bank ",
+              "choices": [
+                "CIMB Bank",
+                "Hong Leong Bank",
+                "Maybank Berhad",
+                "Public Bank",
+                "RHB Bank"
+              ]
+            }
+          },
+          "guid": "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:ea0c330d-8ed1-4eda-86df-559c55d61429",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 11.83,
+          "max_amount": 14792.89,
+          "rate": 3.38,
+          "direction": "in",
+          "label": "Bank Account",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:MYR",
+          "country_code": "MYS",
+          "customer_kind": "both"
+        },
+        "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89",
+          "fee_fixed": 1,
+          "fee_percent": 1,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 7.19,
+          "max_amount": 7363.38,
+          "rate": 1.21,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "3b475d6d-e57c-4cda-92ae-0a48a1bf4d72:c22954d1-bf1b-45df-a9ad-51d9760deb89": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_id_details": {
+              "description": "Customer ID",
+              "weight": 2
+            },
+            "to_id_type": {
+              "description": "Customer ID Type",
+              "choices": [
+                "RUT",
+                "PP"
+              ],
+              "weight": 2
+            }
+          },
+          "guid": "3b475d6d-e57c-4cda-92ae-0a48a1bf4d72:c22954d1-bf1b-45df-a9ad-51d9760deb89",
+          "fee_fixed": 2,
+          "fee_percent": 0.5,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 0.4,
+          "digits_delivery": 0,
+          "digits_asset": 2,
+          "min_amount": 0.16,
+          "max_amount": 2798.51,
+          "rate": 859,
+          "direction": "in",
+          "label": "Chile",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:CLP",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "3c4982c0-a816-4e33-9c1b-a8b189ce6531:76efcb4b-5fec-427a-b52f-bf0825f09464": {
+          "fields": {
+            "billing_address": {
+              "description": "Sender's address",
+              "weight": 4
+            },
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 5
+            },
+            "billing_state": {
+              "description": "Sender's state",
+              "choices": [
+                "Acre, AC",
+                "Alagoas, AL",
+                "Amapá, AP",
+                "Amazonas, AM",
+                "Bahia, BA",
+                "Ceará, CE",
+                "Espírito Santo, ES",
+                "Goiás, GO",
+                "Maranhão, MA",
+                "Mato Grosso, MT",
+                "Mato Grosso do Sul, MS",
+                "Minas Gerais, MG",
+                "Pará, PA",
+                "Paraíba, PB",
+                "Paraná, PR",
+                "Pernambuco, PE",
+                "Piauí, PI",
+                "Rio de Janeiro, RJ",
+                "Rio Grande do Norte, RN",
+                "Rio Grande do Sul, RS",
+                "Rondônia, RO",
+                "Roraima, RR",
+                "Santa Catarina, SC",
+                "São Paulo, SP",
+                "Sergipe, SE",
+                "Tocantins, TO",
+                "Distrito Federal, DF"
+              ],
+              "weight": 1
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 2
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_account_number": {
+              "description": "Account number",
+              "weight": 3
+            },
+            "from_bank_branch": {
+              "description": "target bank branch",
+              "weight": 6
+            },
+            "from_bank_name": {
+              "description": "Bank name",
+              "choices": [
+                "ADVANCED CC LTDA (117)",
+                "AGK CC S.A. (272)",
+                "ALBATROSS CCV S.A (172)",
+                "ATIVA S.A. INVESTIMENTOS CCTVM (188)",
+                "AVISTA S.A. CFI (280)",
+                "B&T CC LTDA. (080)",
+                "BANCO BRADESCARD (063)",
+                "BANCO BTG PACTUAL S.A. (208)",
+                "BANCO CIFRA (233)",
+                "BANCO CSF S.A. (368)",
+                "BANCO FINAXIS (094)",
+                "BANCO INBURSA (012)",
+                "BANCO INTER (077)",
+                "BANCO INVESTCRED UNIBANCO S.A. (249)",
+                "BANCO ITAÚ CONSIGNADO S.A. (029)",
+                "BANCO JOHN DEERE S.A. (217)",
+                "BANCO ORIGEM (995)",
+                "BANCO ORIGINAL (212)",
+                "BANCO PAN (623)",
+                "BANCO SEMEAR (743)",
+                "BANCO SISTEMA (754)",
+                "BANCO TOPÁZIO S.A. (082)",
+                "BANCOOB (756)",
+                "BARIGUI CH (268)",
+                "BBN BCO BRASILEIRO DE NEGOCIOS S.A. (081)",
+                "BCO A.J. RENNER S.A. (654)",
+                "BCO ABC BRASIL S.A. (246)",
+                "BCO ABN AMRO S.A. (075)",
+                "BCO AGIBANK S.A. (121)",
+                "BCO ALFA S.A. (025)",
+                "BCO ALVORADA S.A. (641)",
+                "BCO ANDBANK S.A. (065)",
+                "BCO ARBI S.A. (213)",
+                "BCO B3 S.A. (096)",
+                "BCO BANDEPE S.A. (024)",
+                "BCO BANESTES S.A. (021)",
+                "BCO BARIGUI INV FIN S/A (330)",
+                "BCO BBI S.A. (036)",
+                "BCO BMG S.A. (318)",
+                "BCO BNP PARIBAS BRASIL S A (752)",
+                "BCO BOCOM BBM S.A. (107)",
+                "BCO BRADESCO BERJ S.A. (122)",
+                "BCO BRADESCO CARTOES S.A. (204)",
+                "BCO BRADESCO FINANC. S.A. (394)",
+                "BCO BRADESCO S.A. (237)",
+                "BCO BS2 S.A. (218)",
+                "BCO C6 S.A. (336)",
+                "BCO CAIXA GERAL BRASIL S.A. (473)",
+                "BCO CAPITAL S.A. (412)",
+                "BCO CARGILL S.A. (040)",
+                "BCO CCB BRASIL S.A. (320)",
+                "BCO CEDULA S.A. (266)",
+                "BCO CETELEM S.A. (739)",
+                "BCO CITIBANK S.A. (745)",
+                "BCO CLASSICO S.A. (241)",
+                "BCO CONFIDENCE DE CÂMBIO S.A. (095)",
+                "BCO COOPERATIVO SICREDI S.A. (748)",
+                "BCO CREDIT SUISSE (BRL) S.A. (505)",
+                "BCO CREFISA S.A. (069)",
+                "BCO CRÉDIT AGRICOLE BR S.A. (222)",
+                "BCO DA AMAZONIA S.A. (003)",
+                "BCO DA CHINA BRASIL S.A. (083)",
+                "BCO DAYCOVAL S.A (707)",
+                "BCO DO BRASIL S.A. (001)",
+                "BCO DO EST. DE SE S.A. (047)",
+                "BCO DO EST. DO PA S.A. (037)",
+                "BCO DO ESTADO DO RS S.A. (041)",
+                "BCO DO NORDESTE DO BRASIL S.A. (004)",
+                "BCO FATOR S.A. (265)",
+                "BCO FIBRA S.A. (224)",
+                "BCO FICSA S.A. (626)",
+                "BCO GUANABARA S.A. (612)",
+                "BCO INDUSTRIAL DO BRASIL S.A. (604)",
+                "BCO INDUSVAL S.A. (653)",
+                "BCO ITAUBANK S.A. (479)",
+                "BCO ITAÚ BBA S.A. (184)",
+                "BCO J.P. MORGAN S.A. (376)",
+                "BCO KDB BRASIL S.A. (076)",
+                "BCO KEB HANA DO BRASIL S.A. (757)",
+                "BCO LA NACION ARGENTINA (300)",
+                "BCO LA PROVINCIA B AIRES BCE (495)",
+                "BCO LUSO BRASILEIRO S.A. (600)",
+                "BCO MERCANTIL DO BRASIL S.A. (389)",
+                "BCO MIZUHO S.A. (370)",
+                "BCO MODAL S.A. (746)",
+                "BCO MORGAN STANLEY S.A. (066)",
+                "BCO MUFG BRASIL S.A. (456)",
+                "BCO MÁXIMA S.A. (243)",
+                "BCO OLÉ BONSUCESSO CONSIGNADO S.A. (169)",
+                "BCO ORIGINAL DO AGRO S/A (079)",
+                "BCO OURINVEST S.A. (712)",
+                "BCO PAULISTA S.A. (611)",
+                "BCO PINE S.A. (643)",
+                "BCO RABOBANK INTL BRASIL S.A. (747)",
+                "BCO RENDIMENTO S.A. (633)",
+                "BCO REP ORIENTAL URUGUAY BCE (494)",
+                "BCO RIBEIRAO PRETO S.A. (741)",
+                "BCO RODOBENS S.A. (120)",
+                "BCO SAFRA S.A. (422)",
+                "BCO SANTANDER (BRASIL) S.A. (033)",
+                "BCO SMARTBANK S.A. (630)",
+                "BCO SOCIETE GENERALE BRASIL (366)",
+                "BCO SOFISA S.A. (637)",
+                "BCO SUMITOMO MITSUI BRASIL S.A. (464)",
+                "BCO TRIANGULO S.A. (634)",
+                "BCO TRICURY S.A. (018)",
+                "BCO VOTORANTIM S.A. (655)",
+                "BCO VR S.A. (610)",
+                "BCO WESTERN UNION (119)",
+                "BCO WOORI BANK DO BRASIL S.A. (124)",
+                "BCO. J.SAFRA S.A. (074)",
+                "BCV (250)",
+                "BEXS BCO DE CAMBIO S.A. (144)",
+                "BEXS CC S.A. (253)",
+                "BGC LIQUIDEZ DTVM LTDA (134)",
+                "BMP Money Plus (274)",
+                "BNDES (007)",
+                "BNY MELLON BCO S.A. (017)",
+                "BOFA MERRILL LYNCH BM S.A. (755)",
+                "BPP IP S.A. (301)",
+                "BR PARTNERS BI (126)",
+                "BRASIL PLURAL S.A. BCO. (125)",
+                "BRB - BCO DE BRASILIA S.A. (070)",
+                "BRK S.A. CFI (092)",
+                "BRL TRUST DTVM SA (173)",
+                "BROKER BRASIL CC LTDA. (142)",
+                "BS2 DTVM S.A. (292)",
+                "C.SUISSE HEDGING-GRIFFO CV S/A (011)",
+                "CAIXA ECONOMICA FEDERAL (104)",
+                "CAMBIONET CC LTDA (309)",
+                "CAROL DTVM LTDA. (288)",
+                "CARUANA SCFI (130)",
+                "CASA CREDITO S.A. SCM (159)",
+                "CCC NOROESTE BRASILEIRO LTDA. (097)",
+                "CCCM UNICRED CENTRAL RS (091)",
+                "CCM DESP TRÂNS SC E RS (016)",
+                "CCR COOPAVEL (281)",
+                "CCR DE ABELARDO LUZ (322)",
+                "CCR DE OURO (286)",
+                "CCR DE PRIMAVERA DO LESTE (279)",
+                "CCR DE SÃO MIGUEL DO OESTE (273)",
+                "CCR REG MOGIANA (089)",
+                "CENTRAL COOPERATIVA DE CRÉDITO NO ESTADO DO ESPÍRITO SANTO (114)",
+                "CITIBANK N.A. (477)",
+                "CM CAPITAL MARKETS CCTVM LTDA (180)",
+                "CODEPE CVC S.A. (127)",
+                "COMMERZBANK BRASIL S.A. - BCO MÚLTIPLO (163)",
+                "CONF NAC COOP CENTRAIS UNICRED (136)",
+                "CONFIDENCE CC S.A. (060)",
+                "COOP CENTRAL AILOS (085)",
+                "CREDIALIANÇA CCR (098)",
+                "CREDICOAMO (010)",
+                "CREDITAS SCD (342)",
+                "CREFAZ SCMEPP LTDA (321)",
+                "CRESOL CONFEDERAÇÃO (133)",
+                "DACASA FINANCEIRA S/A - SCFI (182)",
+                "DECYSEO CC LTDA. (289)",
+                "DEUTSCHE BANK S.A.BCO ALEMAO (487)",
+                "EASYNVEST - TÍTULO CV SA (140)",
+                "FACTA S.A. CFI (149)",
+                "FAIR CC S.A. (196)",
+                "FRENTE CC LTDA. (285)",
+                "GENIAL INVESTIMENTOS CVM S.A. (278)",
+                "GERENCIANET PAGTOS BRASIL LTDA (364)",
+                "GET MONEY CC LTDA (138)",
+                "GOLDMAN SACHS DO BRASIL BM S.A (064)",
+                "GUIDE (177)",
+                "GUITTA CC LTDA (146)",
+                "HAITONG BI DO BRASIL S.A. (078)",
+                "HIPERCARD BM S.A. (062)",
+                "HS FINANCEIRA (189)",
+                "HSBC BANCO DE INVESTIMENTO (269)",
+                "IB CCTVM LTDA (271)",
+                "ICAP DO BRASIL CTVM LTDA. (157)",
+                "ICBC DO BRASIL BM S.A. (132)",
+                "ING BANK N.V. (492)",
+                "INTESA SANPAOLO BRASIL S.A. BM (139)",
+                "ITAÚ UNIBANCO BM S.A. (341)",
+                "ITAÚ UNIBANCO HOLDING BM S.A. (652)",
+                "JPMORGAN CHASE BANK (488)",
+                "JUNO (383)",
+                "KIRTON BANK (399)",
+                "LASTRO RDV DTVM LTDA (293)",
+                "LECCA CFI S.A. (105)",
+                "LEVYCAM CCV LTDA (145)",
+                "MAGLIANO S.A. CCVM (113)",
+                "MERCADO PAGO (323)",
+                "MGS BANK (991)",
+                "MS BANK S.A. BCO DE CÂMBIO (128)",
+                "MULTIMONEY CC LTDA. (137)",
+                "NATIXIS BRASIL S.A. BM (014)",
+                "NOVA FUTURA CTVM LTDA. (191)",
+                "NOVO BCO CONTINENTAL S.A. - BM (753)",
+                "NU PAGAMENTOS S.A. (260)",
+                "OLIVEIRA TRUST DTVM S.A. (111)",
+                "OM DTVM LTDA (319)",
+                "OMNI BANCO S.A. (613)",
+                "PAGSEGURO (290)",
+                "PARANA BCO S.A. (254)",
+                "PARMETAL DTVM LTDA (194)",
+                "PERNAMBUCANAS FINANC S.A. CFI (174)",
+                "PI DTVM S.A. (315)",
+                "PLANNER CV S.A. (100)",
+                "PORTOCRED S.A. - CFI (108)",
+                "PORTOPAR DTVM LTDA (306)",
+                "PÓLOCRED SCMEPP LTDA. (093)",
+                "QI SCD S.A. (329)",
+                "RB CAPITAL INVESTIMENTOS DTVM LTDA. (283)",
+                "RENASCENCA DTVM LTDA (101)",
+                "SAGITUR CC LTDA (270)",
+                "SCOTIABANK BRASIL (751)",
+                "SENFF S.A. - CFI (276)",
+                "SENSO CCVM S.A. (545)",
+                "SERVICOOP (190)",
+                "SOCRED S.A. SCM (183)",
+                "SOROCRED CFI S.A. (299)",
+                "STANDARD CHARTERED BI S.A. (118)",
+                "STONE PAGAMENTOS S.A. (197)",
+                "TERRA INVESTIMENTOS DTVM (307)",
+                "TREVISO CC S.A. (143)",
+                "TULLETT PREBON BRASIL CVC LTDA (131)",
+                "UBS BRASIL BI S.A. (129)",
+                "UBS BRASIL CCTVM S.A. (015)",
+                "UNIPRIME CENTRAL CCC LTDA. (099)",
+                "UNIPRIME NORTE DO PARANÁ - CC (084)",
+                "VIPS CC LTDA. (298)",
+                "VISION S.A. CC (296)",
+                "VORTX DTVM LTDA. (310)",
+                "XP INVESTIMENTOS CCTVM S/A (102)",
+                "ÓRAMA DTVM S.A. (325)"
+              ],
+              "weight": 10
+            },
+            "from_first_name": {
+              "description": "First name",
+              "weight": 7
+            },
+            "from_id_details_cpf": {
+              "description": "CPF number (XXX.XXX.XXX-XX)",
+              "weight": 8
+            },
+            "from_last_name": {
+              "description": "Last name",
+              "weight": 9
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "3c4982c0-a816-4e33-9c1b-a8b189ce6531:76efcb4b-5fec-427a-b52f-bf0825f09464",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 3.98,
+          "max_amount": 2988.04,
+          "rate": 5.02,
+          "direction": "in",
+          "label": "TED",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "3c4982c0-a816-4e33-9c1b-a8b189ce6531:e64c3e3f-f7b6-442e-8c28-23d7a9d5f2c9": {
+          "fields": {
+            "benef_city": {
+              "description": "City",
+              "weight": 6
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "Account Number",
+              "weight": 7
+            },
+            "to_bank_branch": {
+              "description": "Bank branch",
+              "weight": 8
+            },
+            "to_bank_name": {
+              "description": "Bank name",
+              "choices": [
+                "ADVANCED CC LTDA (117)",
+                "AGK CC S.A. (272)",
+                "ALBATROSS CCV S.A (172)",
+                "ATIVA S.A. INVESTIMENTOS CCTVM (188)",
+                "AVISTA S.A. CFI (280)",
+                "B&T CC LTDA. (080)",
+                "BANCO BRADESCARD (063)",
+                "BANCO BTG PACTUAL S.A. (208)",
+                "BANCO CIFRA (233)",
+                "BANCO CSF S.A. (368)",
+                "BANCO FINAXIS (094)",
+                "BANCO INBURSA (012)",
+                "BANCO INTER (077)",
+                "BANCO INVESTCRED UNIBANCO S.A. (249)",
+                "BANCO ITAÚ CONSIGNADO S.A. (029)",
+                "BANCO JOHN DEERE S.A. (217)",
+                "BANCO ORIGEM (995)",
+                "BANCO ORIGINAL (212)",
+                "BANCO PAN (623)",
+                "BANCO SEMEAR (743)",
+                "BANCO SISTEMA (754)",
+                "BANCO TOPÁZIO S.A. (082)",
+                "BANCOOB (756)",
+                "BARIGUI CH (268)",
+                "BBN BCO BRASILEIRO DE NEGOCIOS S.A. (081)",
+                "BCO A.J. RENNER S.A. (654)",
+                "BCO ABC BRASIL S.A. (246)",
+                "BCO ABN AMRO S.A. (075)",
+                "BCO AGIBANK S.A. (121)",
+                "BCO ALFA S.A. (025)",
+                "BCO ALVORADA S.A. (641)",
+                "BCO ANDBANK S.A. (065)",
+                "BCO ARBI S.A. (213)",
+                "BCO B3 S.A. (096)",
+                "BCO BANDEPE S.A. (024)",
+                "BCO BANESTES S.A. (021)",
+                "BCO BARIGUI INV FIN S/A (330)",
+                "BCO BBI S.A. (036)",
+                "BCO BMG S.A. (318)",
+                "BCO BNP PARIBAS BRASIL S A (752)",
+                "BCO BOCOM BBM S.A. (107)",
+                "BCO BRADESCO BERJ S.A. (122)",
+                "BCO BRADESCO CARTOES S.A. (204)",
+                "BCO BRADESCO FINANC. S.A. (394)",
+                "BCO BRADESCO S.A. (237)",
+                "BCO BS2 S.A. (218)",
+                "BCO C6 S.A. (336)",
+                "BCO CAIXA GERAL BRASIL S.A. (473)",
+                "BCO CAPITAL S.A. (412)",
+                "BCO CARGILL S.A. (040)",
+                "BCO CCB BRASIL S.A. (320)",
+                "BCO CEDULA S.A. (266)",
+                "BCO CETELEM S.A. (739)",
+                "BCO CITIBANK S.A. (745)",
+                "BCO CLASSICO S.A. (241)",
+                "BCO CONFIDENCE DE CÂMBIO S.A. (095)",
+                "BCO COOPERATIVO SICREDI S.A. (748)",
+                "BCO CREDIT SUISSE (BRL) S.A. (505)",
+                "BCO CREFISA S.A. (069)",
+                "BCO CRÉDIT AGRICOLE BR S.A. (222)",
+                "BCO DA AMAZONIA S.A. (003)",
+                "BCO DA CHINA BRASIL S.A. (083)",
+                "BCO DAYCOVAL S.A (707)",
+                "BCO DO BRASIL S.A. (001)",
+                "BCO DO EST. DE SE S.A. (047)",
+                "BCO DO EST. DO PA S.A. (037)",
+                "BCO DO ESTADO DO RS S.A. (041)",
+                "BCO DO NORDESTE DO BRASIL S.A. (004)",
+                "BCO FATOR S.A. (265)",
+                "BCO FIBRA S.A. (224)",
+                "BCO FICSA S.A. (626)",
+                "BCO GUANABARA S.A. (612)",
+                "BCO INDUSTRIAL DO BRASIL S.A. (604)",
+                "BCO INDUSVAL S.A. (653)",
+                "BCO ITAUBANK S.A. (479)",
+                "BCO ITAÚ BBA S.A. (184)",
+                "BCO J.P. MORGAN S.A. (376)",
+                "BCO KDB BRASIL S.A. (076)",
+                "BCO KEB HANA DO BRASIL S.A. (757)",
+                "BCO LA NACION ARGENTINA (300)",
+                "BCO LA PROVINCIA B AIRES BCE (495)",
+                "BCO LUSO BRASILEIRO S.A. (600)",
+                "BCO MERCANTIL DO BRASIL S.A. (389)",
+                "BCO MIZUHO S.A. (370)",
+                "BCO MODAL S.A. (746)",
+                "BCO MORGAN STANLEY S.A. (066)",
+                "BCO MUFG BRASIL S.A. (456)",
+                "BCO MÁXIMA S.A. (243)",
+                "BCO OLÉ BONSUCESSO CONSIGNADO S.A. (169)",
+                "BCO ORIGINAL DO AGRO S/A (079)",
+                "BCO OURINVEST S.A. (712)",
+                "BCO PAULISTA S.A. (611)",
+                "BCO PINE S.A. (643)",
+                "BCO RABOBANK INTL BRASIL S.A. (747)",
+                "BCO RENDIMENTO S.A. (633)",
+                "BCO REP ORIENTAL URUGUAY BCE (494)",
+                "BCO RIBEIRAO PRETO S.A. (741)",
+                "BCO RODOBENS S.A. (120)",
+                "BCO SAFRA S.A. (422)",
+                "BCO SANTANDER (BRASIL) S.A. (033)",
+                "BCO SMARTBANK S.A. (630)",
+                "BCO SOCIETE GENERALE BRASIL (366)",
+                "BCO SOFISA S.A. (637)",
+                "BCO SUMITOMO MITSUI BRASIL S.A. (464)",
+                "BCO TRIANGULO S.A. (634)",
+                "BCO TRICURY S.A. (018)",
+                "BCO VOTORANTIM S.A. (655)",
+                "BCO VR S.A. (610)",
+                "BCO WESTERN UNION (119)",
+                "BCO WOORI BANK DO BRASIL S.A. (124)",
+                "BCO. J.SAFRA S.A. (074)",
+                "BCV (250)",
+                "BEXS BCO DE CAMBIO S.A. (144)",
+                "BEXS CC S.A. (253)",
+                "BGC LIQUIDEZ DTVM LTDA (134)",
+                "BMP Money Plus (274)",
+                "BNDES (007)",
+                "BNY MELLON BCO S.A. (017)",
+                "BOFA MERRILL LYNCH BM S.A. (755)",
+                "BPP IP S.A. (301)",
+                "BR PARTNERS BI (126)",
+                "BRASIL PLURAL S.A. BCO. (125)",
+                "BRB - BCO DE BRASILIA S.A. (070)",
+                "BRK S.A. CFI (092)",
+                "BRL TRUST DTVM SA (173)",
+                "BROKER BRASIL CC LTDA. (142)",
+                "BS2 DTVM S.A. (292)",
+                "C.SUISSE HEDGING-GRIFFO CV S/A (011)",
+                "CAIXA ECONOMICA FEDERAL (104)",
+                "CAMBIONET CC LTDA (309)",
+                "CAROL DTVM LTDA. (288)",
+                "CARUANA SCFI (130)",
+                "CASA CREDITO S.A. SCM (159)",
+                "CCC NOROESTE BRASILEIRO LTDA. (097)",
+                "CCCM UNICRED CENTRAL RS (091)",
+                "CCM DESP TRÂNS SC E RS (016)",
+                "CCR COOPAVEL (281)",
+                "CCR DE ABELARDO LUZ (322)",
+                "CCR DE OURO (286)",
+                "CCR DE PRIMAVERA DO LESTE (279)",
+                "CCR DE SÃO MIGUEL DO OESTE (273)",
+                "CCR REG MOGIANA (089)",
+                "CENTRAL COOPERATIVA DE CRÉDITO NO ESTADO DO ESPÍRITO SANTO (114)",
+                "CITIBANK N.A. (477)",
+                "CM CAPITAL MARKETS CCTVM LTDA (180)",
+                "CODEPE CVC S.A. (127)",
+                "COMMERZBANK BRASIL S.A. - BCO MÚLTIPLO (163)",
+                "CONF NAC COOP CENTRAIS UNICRED (136)",
+                "CONFIDENCE CC S.A. (060)",
+                "COOP CENTRAL AILOS (085)",
+                "CREDIALIANÇA CCR (098)",
+                "CREDICOAMO (010)",
+                "CREDITAS SCD (342)",
+                "CREFAZ SCMEPP LTDA (321)",
+                "CRESOL CONFEDERAÇÃO (133)",
+                "DACASA FINANCEIRA S/A - SCFI (182)",
+                "DECYSEO CC LTDA. (289)",
+                "DEUTSCHE BANK S.A.BCO ALEMAO (487)",
+                "EASYNVEST - TÍTULO CV SA (140)",
+                "FACTA S.A. CFI (149)",
+                "FAIR CC S.A. (196)",
+                "FRENTE CC LTDA. (285)",
+                "GENIAL INVESTIMENTOS CVM S.A. (278)",
+                "GERENCIANET PAGTOS BRASIL LTDA (364)",
+                "GET MONEY CC LTDA (138)",
+                "GOLDMAN SACHS DO BRASIL BM S.A (064)",
+                "GUIDE (177)",
+                "GUITTA CC LTDA (146)",
+                "HAITONG BI DO BRASIL S.A. (078)",
+                "HIPERCARD BM S.A. (062)",
+                "HS FINANCEIRA (189)",
+                "HSBC BANCO DE INVESTIMENTO (269)",
+                "IB CCTVM LTDA (271)",
+                "ICAP DO BRASIL CTVM LTDA. (157)",
+                "ICBC DO BRASIL BM S.A. (132)",
+                "ING BANK N.V. (492)",
+                "INTESA SANPAOLO BRASIL S.A. BM (139)",
+                "ITAÚ UNIBANCO BM S.A. (341)",
+                "ITAÚ UNIBANCO HOLDING BM S.A. (652)",
+                "JPMORGAN CHASE BANK (488)",
+                "JUNO (383)",
+                "KIRTON BANK (399)",
+                "LASTRO RDV DTVM LTDA (293)",
+                "LECCA CFI S.A. (105)",
+                "LEVYCAM CCV LTDA (145)",
+                "MAGLIANO S.A. CCVM (113)",
+                "MERCADO PAGO (323)",
+                "MGS BANK (991)",
+                "MS BANK S.A. BCO DE CÂMBIO (128)",
+                "MULTIMONEY CC LTDA. (137)",
+                "NATIXIS BRASIL S.A. BM (014)",
+                "NOVA FUTURA CTVM LTDA. (191)",
+                "NOVO BCO CONTINENTAL S.A. - BM (753)",
+                "NU PAGAMENTOS S.A. (260)",
+                "OLIVEIRA TRUST DTVM S.A. (111)",
+                "OM DTVM LTDA (319)",
+                "OMNI BANCO S.A. (613)",
+                "PAGSEGURO (290)",
+                "PARANA BCO S.A. (254)",
+                "PARMETAL DTVM LTDA (194)",
+                "PERNAMBUCANAS FINANC S.A. CFI (174)",
+                "PI DTVM S.A. (315)",
+                "PLANNER CV S.A. (100)",
+                "PORTOCRED S.A. - CFI (108)",
+                "PORTOPAR DTVM LTDA (306)",
+                "PÓLOCRED SCMEPP LTDA. (093)",
+                "QI SCD S.A. (329)",
+                "RB CAPITAL INVESTIMENTOS DTVM LTDA. (283)",
+                "RENASCENCA DTVM LTDA (101)",
+                "SAGITUR CC LTDA (270)",
+                "SCOTIABANK BRASIL (751)",
+                "SENFF S.A. - CFI (276)",
+                "SENSO CCVM S.A. (545)",
+                "SERVICOOP (190)",
+                "SOCRED S.A. SCM (183)",
+                "SOROCRED CFI S.A. (299)",
+                "STANDARD CHARTERED BI S.A. (118)",
+                "STONE PAGAMENTOS S.A. (197)",
+                "TERRA INVESTIMENTOS DTVM (307)",
+                "TREVISO CC S.A. (143)",
+                "TULLETT PREBON BRASIL CVC LTDA (131)",
+                "UBS BRASIL BI S.A. (129)",
+                "UBS BRASIL CCTVM S.A. (015)",
+                "UNIPRIME CENTRAL CCC LTDA. (099)",
+                "UNIPRIME NORTE DO PARANÁ - CC (084)",
+                "VIPS CC LTDA. (298)",
+                "VISION S.A. CC (296)",
+                "VORTX DTVM LTDA. (310)",
+                "XP INVESTIMENTOS CCTVM S/A (102)",
+                "ÓRAMA DTVM S.A. (325)"
+              ],
+              "weight": 1
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 10
+            },
+            "to_id_details_cpf": {
+              "description": "CPF number",
+              "weight": 9
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 2
+            },
+            "to_postal_code": {
+              "description": "Post code",
+              "weight": 5
+            },
+            "to_state": {
+              "description": "State",
+              "choices": [
+                "Acre, AC",
+                "Alagoas, AL",
+                "Amapá, AP",
+                "Amazonas, AM",
+                "Bahia, BA",
+                "Ceará, CE",
+                "Espírito Santo, ES",
+                "Goiás, GO",
+                "Maranhão, MA",
+                "Mato Grosso, MT",
+                "Mato Grosso do Sul, MS",
+                "Minas Gerais, MG",
+                "Pará, PA",
+                "Paraíba, PB",
+                "Paraná, PR",
+                "Pernambuco, PE",
+                "Piauí, PI",
+                "Rio de Janeiro, RJ",
+                "Rio Grande do Norte, RN",
+                "Rio Grande do Sul, RS",
+                "Rondônia, RO",
+                "Roraima, RR",
+                "Santa Catarina, SC",
+                "São Paulo, SP",
+                "Sergipe, SE",
+                "Tocantins, TO",
+                "Distrito Federal, DF"
+              ],
+              "weight": 3
+            },
+            "to_street": {
+              "description": "Street",
+              "weight": 4
+            }
+          },
+          "guid": "3c4982c0-a816-4e33-9c1b-a8b189ce6531:e64c3e3f-f7b6-442e-8c28-23d7a9d5f2c9",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 3.98,
+          "max_amount": 2988.04,
+          "rate": 5.02,
+          "direction": "out",
+          "label": "TED",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "44bb4307-2235-4589-b73b-25ed6494205c:20de66a4-fa26-4c20-ba69-9c2ba9b1b1d3": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_bank_name": {
+              "description": "Bank name",
+              "choices": [
+                "PAYTM",
+                "MOBIKWIK",
+                "RELIANCE JIO"
+              ],
+              "weight": 2
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 3
+            },
+            "from_mobile": {
+              "description": "Mobile",
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "44bb4307-2235-4589-b73b-25ed6494205c:20de66a4-fa26-4c20-ba69-9c2ba9b1b1d3",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1.31,
+          "max_amount": 1311.81,
+          "rate": 76.23,
+          "direction": "in",
+          "label": "India",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "EWALLET",
+          "payment_group_name": "ewallet",
+          "delivery_currency": "iso4217:INR",
+          "country_code": "IND",
+          "customer_kind": "both"
+        },
+        "4b3df71f-28e1-4b29-a620-646fa5770b7c:c38a46f2-79e1-44e8-add2-96342dccbd2a": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_name": {
+              "description": "Bank",
+              "choices": [
+                "THA:Thai QR Payment"
+              ],
+              "weight": 1
+            }
+          },
+          "guid": "4b3df71f-28e1-4b29-a620-646fa5770b7c:c38a46f2-79e1-44e8-add2-96342dccbd2a",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 2.84,
+          "max_amount": 14212.62,
+          "rate": 35.18,
+          "direction": "in",
+          "label": "Thai QR Payment",
+          "logo_url": "https://fpf-assets.armenotech.com/thai-qr-icon.png",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/thai-qr-icon.png",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:THB",
+          "country_code": "THA",
+          "customer_kind": "both"
+        },
+        "7289cfbb-1895-48f3-8d79-53836d7de4db:ac59ec03-8730-4e13-9cc8-41b60faa15ba": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_id_details": {
+              "description": "Customer ID",
+              "weight": 1
+            },
+            "to_id_type": {
+              "description": "Customer ID Type",
+              "choices": [
+                "RUT",
+                "PP"
+              ],
+              "weight": 2
+            }
+          },
+          "guid": "7289cfbb-1895-48f3-8d79-53836d7de4db:ac59ec03-8730-4e13-9cc8-41b60faa15ba",
+          "fee_fixed": 0,
+          "fee_percent": 2,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 2,
+          "digits_delivery": 0,
+          "digits_asset": 2,
+          "min_amount": 1.14,
+          "max_amount": 2755.59,
+          "rate": 859,
+          "direction": "in",
+          "label": "Chile",
+          "logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/wiretransfer-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:CLP",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "7ae92959-5fab-45ca-a9eb-2209c2582b1f:2b360811-eac2-4bc5-9d34-00a2759a0019": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "7ae92959-5fab-45ca-a9eb-2209c2582b1f:2b360811-eac2-4bc5-9d34-00a2759a0019",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0,
+          "max_amount": 131181.94,
+          "rate": 76.23,
+          "direction": "in",
+          "label": "Netbanking",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:INR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "7ae92959-5fab-45ca-a9eb-2209c2582b1f:f6c5adba-3d13-44f3-bdbb-7d8d7b5a979d": {
+          "fields": {
+            "benef_bank_ifs_code": {
+              "description": "Beneficiary bank IFSC",
+              "weight": 3
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_account_number": {
+              "description": "Account number",
+              "weight": 4
+            },
+            "to_account_type": {
+              "description": "Account type",
+              "choices": [
+                "Savings",
+                "Current"
+              ],
+              "weight": 5
+            },
+            "to_bank_name": {
+              "description": "Bank",
+              "choices": [
+                "ICICI Bank Ltd",
+                "HDFC Bank Ltd",
+                "Axis Bank Ltd",
+                "Kotak Mahindra Bank Ltd",
+                "Indusind Bank Ltd",
+                "Yes Bank Ltd",
+                "IDFC First Bank Ltd",
+                "Federal Bank Ltd",
+                "Bandhan Bank Ltd",
+                "RBL Bank Ltd",
+                "Jammu and Kashmir Bank Ltd",
+                "South Indian Bank Ltd",
+                "Karnataka Bank Ltd",
+                "Karur Vysya Bank Ltd",
+                "City Union Bank Ltd"
+              ],
+              "weight": 6
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          },
+          "guid": "7ae92959-5fab-45ca-a9eb-2209c2582b1f:f6c5adba-3d13-44f3-bdbb-7d8d7b5a979d",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.01,
+          "max_amount": 131181.94,
+          "rate": 76.23,
+          "direction": "out",
+          "label": "Netbanking",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:INR",
+          "country_code": "IND",
+          "customer_kind": "both"
+        },
+        "86b82a61-1534-41ee-a15b-2c117608202b:e0030cc0-9d1e-4c73-90ec-d98303033247": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "86b82a61-1534-41ee-a15b-2c117608202b:e0030cc0-9d1e-4c73-90ec-d98303033247",
+          "fee_fixed": 1,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.82,
+          "max_amount": 8.26,
+          "rate": 1.21,
+          "direction": "in",
+          "label": "Ani Test method payin",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:0a1e72e7-2e6c-43ec-a51c-2f7135b1db39": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:0a1e72e7-2e6c-43ec-a51c-2f7135b1db39",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "in",
+          "label": "",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.03,
+          "max_amount": 33.33,
+          "rate": 30,
+          "direction": "in",
+          "label": "Test Driver",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8",
+          "fee_fixed": 0,
+          "fee_percent": 5,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 10,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.03,
+          "max_amount": 37.03,
+          "rate": 30,
+          "direction": "out",
+          "label": "Test Driver",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both"
+        },
+        "a078dabb-7371-441d-9fc4-82dada1e9610:e16c28af-5694-4e76-b5cf-804489a20156": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 2
+            },
+            "from_first_name": {
+              "description": "First name",
+              "weight": 3
+            },
+            "from_id_details_cpf": {
+              "description": "CPF number",
+              "weight": 1
+            },
+            "from_last_name": {
+              "description": "Last name",
+              "weight": 4
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "a078dabb-7371-441d-9fc4-82dada1e9610:e16c28af-5694-4e76-b5cf-804489a20156",
+          "fee_fixed": 1,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0,
+          "max_amount": 4698,
+          "rate": 5.02,
+          "direction": "in",
+          "label": "Boleto",
+          "logo_url": "https://fpf-assets.armenotech.com/Boleto.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/Boleto.svg",
+          "payment_group": "CASH",
+          "payment_group_name": "cash collection",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "a7200e22-f0c4-4474-a37c-2b8d57f70f55:a97fbcd5-bc47-443d-a247-e89301d020a2": {
+          "fields": {
+            "billing_post_code": {
+              "optional": true,
+              "description": "Post code",
+              "weight": 7
+            },
+            "billing_street": {
+              "optional": true,
+              "description": "Street",
+              "weight": 4
+            },
+            "billing_town": {
+              "optional": true,
+              "description": "Town",
+              "weight": 5
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "optional": true,
+              "description": "Country",
+              "choices": [
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "Brunei Darussalam",
+                "Bulgaria",
+                "Burundi",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Chad",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo (Brazzaville)",
+                "Costa Rica",
+                "Côte d'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Estonia",
+                "Ethiopia",
+                "Fiji",
+                "Finland",
+                "France",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guatemala",
+                "Guinea",
+                "Guyana",
+                "Holy See",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Japan",
+                "Kenya",
+                "Kiribati",
+                "South Korea",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao PDR",
+                "Latvia",
+                "Lesotho",
+                "Liberia",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macedonia",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Malta",
+                "Marshall Islands",
+                "Mauritania",
+                "Mauritius",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Zealand",
+                "Niger",
+                "Nigeria",
+                "Norway",
+                "Oman",
+                "Palestinian",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint-Barthélemy",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Vincent and Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "South Africa",
+                "Spain",
+                "Sri Lanka",
+                "Suriname",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Taiwan",
+                "Tajikistan",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkmenistan",
+                "Tuvalu",
+                "Ukraine",
+                "United Kingdom",
+                "United States of America",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Viet Nam",
+                "Zambia",
+                "Zimbabwe"
+              ],
+              "weight": 6
+            },
+            "from_email": {
+              "optional": true,
+              "description": "Email",
+              "weight": 8
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "a7200e22-f0c4-4474-a37c-2b8d57f70f55:a97fbcd5-bc47-443d-a247-e89301d020a2",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 4.13,
+          "max_amount": 826.44,
+          "rate": 1.21,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "aa18ffcd-bd08-47ac-9524-1014fa4e3378:8955a548-4021-499c-96a4-f8cacd5f4c4c": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 7
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "aa18ffcd-bd08-47ac-9524-1014fa4e3378:8955a548-4021-499c-96a4-f8cacd5f4c4c",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.93,
+          "max_amount": 1165.48,
+          "rate": 858.01,
+          "direction": "in",
+          "label": "Chile",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:CLP",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "b2548679-e48e-4e3e-8b20-1b500637506c:50d61d44-e6cf-47be-8456-45d5f4a9edd8": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 2
+            },
+            "from_first_name": {
+              "description": "First name",
+              "weight": 3
+            },
+            "from_id_details_cpf": {
+              "description": "CPF number",
+              "weight": 1
+            },
+            "from_last_name": {
+              "description": "Last name",
+              "weight": 4
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "b2548679-e48e-4e3e-8b20-1b500637506c:50d61d44-e6cf-47be-8456-45d5f4a9edd8",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0,
+          "max_amount": 2528.48,
+          "rate": 5.02,
+          "direction": "in",
+          "label": "PIX",
+          "logo_url": "https://fpf-assets.armenotech.com/pix-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/pix-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:BRL",
+          "country_code": "BRA",
+          "customer_kind": "both"
+        },
+        "c722db4a-f1b0-468e-a991-861f948af536:a36b63a5-4173-4ab9-be68-83c6cce30a7a": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_name": {
+              "description": "Bank",
+              "choices": [
+                "Palawan Pawnshop (economy)"
+              ],
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 4
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 1
+            },
+            "to_mobile": {
+              "description": "Mobile",
+              "weight": 2
+            }
+          },
+          "guid": "c722db4a-f1b0-468e-a991-861f948af536:a36b63a5-4173-4ab9-be68-83c6cce30a7a",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1.07,
+          "max_amount": 358.61,
+          "rate": 55.77,
+          "direction": "out",
+          "label": "",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "CASH",
+          "payment_group_name": "cash collection",
+          "delivery_currency": "iso4217:PHP",
+          "country_code": "PHL",
+          "customer_kind": "both"
+        },
+        "c72cf4dd-c819-4f63-84fb-7bd7a8998a2f:7743fe13-afbb-4bba-a603-2748a8c6cb7b": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_id_details_upi": {
+              "description": "UPI",
+              "weight": 1
+            }
+          },
+          "guid": "c72cf4dd-c819-4f63-84fb-7bd7a8998a2f:7743fe13-afbb-4bba-a603-2748a8c6cb7b",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 6.55,
+          "max_amount": 655.9,
+          "rate": 76.23,
+          "direction": "in",
+          "label": "UPI",
+          "logo_url": "https://fpf-assets.armenotech.com/upi-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/upi-icon.svg",
+          "payment_group": "WIRETRANSFER",
+          "payment_group_name": "bank account",
+          "delivery_currency": "iso4217:INR",
+          "country_code": "IND",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "validation": {
+                "kind": "bank_card_types",
+                "rule": [
+                  "visa",
+                  "mastercard"
+                ]
+              },
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 2
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 3
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d",
+          "fee_fixed": 1.5,
+          "fee_percent": 4,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 2,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 21.42,
+          "max_amount": 5103.06,
+          "rate": 0.66,
+          "direction": "out",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "choices": [
+                "qaw",
+                "gfgfhh"
+              ],
+              "hidden": true,
+              "weight": 1,
+              "hint": "Hint for field"
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+          "fee_fixed": 0.2,
+          "fee_percent": 5,
+          "customer_fee_fixed": 0.3,
+          "customer_fee_percent": 7,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1.26,
+          "max_amount": 579,
+          "rate": 1.21,
+          "direction": "in",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "daac73de-2993-48ad-be91-1a5cd9e95f0c:13264648-895f-4000-a0cd-f97c8fb2cc2e": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 2
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "daac73de-2993-48ad-be91-1a5cd9e95f0c:13264648-895f-4000-a0cd-f97c8fb2cc2e",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 500,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "f53bfa80-9d9a-424c-8657-5955b723e580:35419731-947a-4ed1-bf18-cbeaa18c09d2": {
+          "fields": {
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 2
+            },
+            "billing_street": {
+              "description": "Street",
+              "weight": 3
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 4
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "description": "Country",
+              "weight": 5
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 6
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "f53bfa80-9d9a-424c-8657-5955b723e580:35419731-947a-4ed1-bf18-cbeaa18c09d2",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 5,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "r:3e7a398e-bdeb-4bcd-bd1d-763d6d06e8dd": {
+          "guid": "r:3e7a398e-bdeb-4bcd-bd1d-763d6d06e8dd",
+          "fee_fixed_min": 0.5,
+          "fee_percent_min": 7,
+          "fee_fixed_max": 0.6,
+          "fee_percent_max": 8,
+          "customer_fee_fixed": 0.9,
+          "customer_fee_percent": 5,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 3.9,
+          "max_amount": 951.52,
+          "rate": 1,
+          "direction": "in",
+          "label": "",
+          "logo_url": "test",
+          "mobile_logo_url": "test",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "billing_post_code": {
+              "optional": true,
+              "description": "Post code",
+              "weight": 7
+            },
+            "billing_street": {
+              "optional": true,
+              "description": "Street",
+              "weight": 4
+            },
+            "billing_town": {
+              "optional": true,
+              "description": "Town",
+              "weight": 5
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "optional": true,
+              "description": "Country",
+              "choices": [
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "Brunei Darussalam",
+                "Bulgaria",
+                "Burundi",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Chad",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo (Brazzaville)",
+                "Costa Rica",
+                "Côte d'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Estonia",
+                "Ethiopia",
+                "Fiji",
+                "Finland",
+                "France",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guatemala",
+                "Guinea",
+                "Guyana",
+                "Holy See",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Japan",
+                "Kenya",
+                "Kiribati",
+                "South Korea",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao PDR",
+                "Latvia",
+                "Lesotho",
+                "Liberia",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macedonia",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Malta",
+                "Marshall Islands",
+                "Mauritania",
+                "Mauritius",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Zealand",
+                "Niger",
+                "Nigeria",
+                "Norway",
+                "Oman",
+                "Palestinian",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint-Barthélemy",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Vincent and Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "South Africa",
+                "Spain",
+                "Sri Lanka",
+                "Suriname",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Taiwan",
+                "Tajikistan",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkmenistan",
+                "Tuvalu",
+                "Ukraine",
+                "United Kingdom",
+                "United States of America",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Viet Nam",
+                "Zambia",
+                "Zimbabwe"
+              ],
+              "weight": 6
+            },
+            "from_email": {
+              "optional": true,
+              "description": "Email",
+              "weight": 8
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          }
+        },
+        "r:88ade726-91d6-4331-b78a-45f54e488f29": {
+          "guid": "r:88ade726-91d6-4331-b78a-45f54e488f29",
+          "fee_fixed_min": 0.1,
+          "fee_percent_min": 5,
+          "fee_fixed_max": 0.4,
+          "fee_percent_max": 5,
+          "customer_fee_fixed": 0.1,
+          "customer_fee_percent": 3,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 4.75,
+          "max_amount": 970.77,
+          "rate": 1,
+          "direction": "in",
+          "label": "",
+          "logo_url": "Test",
+          "mobile_logo_url": "Test",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "billing_post_code": {
+              "optional": true,
+              "description": "Post code",
+              "weight": 7
+            },
+            "billing_street": {
+              "optional": true,
+              "description": "Street",
+              "weight": 4
+            },
+            "billing_town": {
+              "optional": true,
+              "description": "Town",
+              "weight": 5
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "optional": true,
+              "description": "Country",
+              "choices": [
+                "Algeria",
+                "American Samoa",
+                "Andorra",
+                "Angola",
+                "Anguilla",
+                "Antigua and Barbuda",
+                "Argentina",
+                "Armenia",
+                "Aruba",
+                "Australia",
+                "Austria",
+                "Azerbaijan",
+                "Bahamas",
+                "Bahrain",
+                "Bangladesh",
+                "Belarus",
+                "Belgium",
+                "Belize",
+                "Benin",
+                "Bermuda",
+                "Bhutan",
+                "Bolivia",
+                "Bosnia and Herzegovina",
+                "Botswana",
+                "Brazil",
+                "Brunei Darussalam",
+                "Bulgaria",
+                "Burundi",
+                "Cameroon",
+                "Canada",
+                "Cape Verde",
+                "Chad",
+                "Chile",
+                "China",
+                "Colombia",
+                "Comoros",
+                "Congo (Brazzaville)",
+                "Costa Rica",
+                "Côte d'Ivoire",
+                "Croatia",
+                "Cuba",
+                "Cyprus",
+                "Czech Republic",
+                "Denmark",
+                "Djibouti",
+                "Dominica",
+                "Dominican Republic",
+                "Ecuador",
+                "Egypt",
+                "El Salvador",
+                "Equatorial Guinea",
+                "Estonia",
+                "Ethiopia",
+                "Fiji",
+                "Finland",
+                "France",
+                "Gabon",
+                "Gambia",
+                "Georgia",
+                "Germany",
+                "Ghana",
+                "Greece",
+                "Greenland",
+                "Grenada",
+                "Guatemala",
+                "Guinea",
+                "Guyana",
+                "Holy See",
+                "Honduras",
+                "Hungary",
+                "Iceland",
+                "India",
+                "Indonesia",
+                "Ireland",
+                "Israel",
+                "Italy",
+                "Japan",
+                "Kenya",
+                "Kiribati",
+                "South Korea",
+                "Kuwait",
+                "Kyrgyzstan",
+                "Lao PDR",
+                "Latvia",
+                "Lesotho",
+                "Liberia",
+                "Liechtenstein",
+                "Lithuania",
+                "Luxembourg",
+                "Macedonia",
+                "Madagascar",
+                "Malawi",
+                "Malaysia",
+                "Maldives",
+                "Malta",
+                "Marshall Islands",
+                "Mauritania",
+                "Mauritius",
+                "Mexico",
+                "Micronesia",
+                "Moldova",
+                "Monaco",
+                "Mongolia",
+                "Montenegro",
+                "Namibia",
+                "Nauru",
+                "Nepal",
+                "Netherlands",
+                "New Zealand",
+                "Niger",
+                "Nigeria",
+                "Norway",
+                "Oman",
+                "Palestinian",
+                "Papua New Guinea",
+                "Paraguay",
+                "Peru",
+                "Poland",
+                "Portugal",
+                "Puerto Rico",
+                "Qatar",
+                "Romania",
+                "Russian Federation",
+                "Rwanda",
+                "Saint-Barthélemy",
+                "Saint Kitts and Nevis",
+                "Saint Lucia",
+                "Saint Vincent and Grenadines",
+                "Samoa",
+                "San Marino",
+                "Sao Tome and Principe",
+                "Saudi Arabia",
+                "Serbia",
+                "Seychelles",
+                "Sierra Leone",
+                "Singapore",
+                "Slovakia",
+                "Slovenia",
+                "Solomon Islands",
+                "South Africa",
+                "Spain",
+                "Sri Lanka",
+                "Suriname",
+                "Swaziland",
+                "Sweden",
+                "Switzerland",
+                "Taiwan",
+                "Tajikistan",
+                "Thailand",
+                "Timor-Leste",
+                "Togo",
+                "Tonga",
+                "Trinidad and Tobago",
+                "Tunisia",
+                "Turkmenistan",
+                "Tuvalu",
+                "Ukraine",
+                "United Kingdom",
+                "United States of America",
+                "Uruguay",
+                "Uzbekistan",
+                "Vanuatu",
+                "Venezuela",
+                "Viet Nam",
+                "Zambia",
+                "Zimbabwe"
+              ],
+              "weight": 6
+            },
+            "from_email": {
+              "optional": true,
+              "description": "Email",
+              "weight": 8
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          }
+        },
+        "r:a9ec404b-f76b-4538-8dbb-11a2cd1659c2": {
+          "guid": "r:a9ec404b-f76b-4538-8dbb-11a2cd1659c2",
+          "fee_fixed_min": 0.2,
+          "fee_percent_min": 3,
+          "fee_fixed_max": 0.3,
+          "fee_percent_max": 5,
+          "customer_fee_fixed": 0.1,
+          "customer_fee_percent": 1,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 4.85,
+          "max_amount": 990,
+          "rate": 1,
+          "direction": "in",
+          "label": "",
+          "logo_url": "Test",
+          "mobile_logo_url": "Test",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "billing_post_code": {
+              "description": "Post code",
+              "weight": 1
+            },
+            "billing_street": {
+              "description": "Street",
+              "weight": 2
+            },
+            "billing_town": {
+              "description": "Town",
+              "weight": 3
+            },
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "from_country": {
+              "description": "Country",
+              "weight": 4
+            },
+            "from_email": {
+              "description": "Email",
+              "weight": 5
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          }
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:74777d90-892d-4aa4-a70f-329f6f3c7a90",
+              "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:620b22a3-e44d-4ccb-88fe-5eae7b6d1d87",
+              "3c4982c0-a816-4e33-9c1b-a8b189ce6531:e64c3e3f-f7b6-442e-8c28-23d7a9d5f2c9",
+              "05bac156-c20c-40bd-8bdf-d177224d905f:b249b395-7bce-427b-b7df-52053f10818a",
+              "7ae92959-5fab-45ca-a9eb-2209c2582b1f:f6c5adba-3d13-44f3-bdbb-7d8d7b5a979d",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d",
+              "21a935f2-b180-4bb8-98a2-aacbe71a5434:ffc9168d-3f35-469d-a47a-cf491a759e6e",
+              "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:892cd087-fffd-4b77-b804-0b753b274aa8",
+              "c722db4a-f1b0-468e-a991-861f948af536:a36b63a5-4173-4ab9-be68-83c6cce30a7a"
+            ]
+          },
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "06360618-e442-41e4-8140-e95b051b333b:5d40cd5a-f57c-410e-a4ed-ef5f51286f04",
+              "daac73de-2993-48ad-be91-1a5cd9e95f0c:13264648-895f-4000-a0cd-f97c8fb2cc2e",
+              "f53bfa80-9d9a-424c-8657-5955b723e580:35419731-947a-4ed1-bf18-cbeaa18c09d2",
+              "aa18ffcd-bd08-47ac-9524-1014fa4e3378:8955a548-4021-499c-96a4-f8cacd5f4c4c",
+              "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:0a1e72e7-2e6c-43ec-a51c-2f7135b1db39",
+              "8a440456-9e4c-4bc4-ba18-c8cf455a8c03:246dc409-d491-4f09-83e3-e701ef66b72a",
+              "3c4982c0-a816-4e33-9c1b-a8b189ce6531:76efcb4b-5fec-427a-b52f-bf0825f09464",
+              "7ae92959-5fab-45ca-a9eb-2209c2582b1f:2b360811-eac2-4bc5-9d34-00a2759a0019",
+              "4b3df71f-28e1-4b29-a620-646fa5770b7c:c38a46f2-79e1-44e8-add2-96342dccbd2a",
+              "b2548679-e48e-4e3e-8b20-1b500637506c:50d61d44-e6cf-47be-8456-45d5f4a9edd8",
+              "0e4d1b1d-d7aa-4f56-ade5-98775400ee4d:6c290fea-c840-478f-af6c-6f8594384c66",
+              "7289cfbb-1895-48f3-8d79-53836d7de4db:ac59ec03-8730-4e13-9cc8-41b60faa15ba",
+              "c72cf4dd-c819-4f63-84fb-7bd7a8998a2f:7743fe13-afbb-4bba-a603-2748a8c6cb7b",
+              "a078dabb-7371-441d-9fc4-82dada1e9610:e16c28af-5694-4e76-b5cf-804489a20156",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+              "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:ea0c330d-8ed1-4eda-86df-559c55d61429",
+              "2f2b4404-6941-4b06-95c0-d75ab0e5eac1:16d54b3f-cf0d-488a-897f-c593393032b0",
+              "44bb4307-2235-4589-b73b-25ed6494205c:20de66a4-fa26-4c20-ba69-9c2ba9b1b1d3",
+              "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89",
+              "3b475d6d-e57c-4cda-92ae-0a48a1bf4d72:c22954d1-bf1b-45df-a9ad-51d9760deb89",
+              "86b82a61-1534-41ee-a15b-2c117608202b:e0030cc0-9d1e-4c73-90ec-d98303033247",
+              "a7200e22-f0c4-4474-a37c-2b8d57f70f55:a97fbcd5-bc47-443d-a247-e89301d020a2",
+              "r:3e7a398e-bdeb-4bcd-bd1d-763d6d06e8dd",
+              "r:88ade726-91d6-4331-b78a-45f54e488f29",
+              "r:a9ec404b-f76b-4538-8dbb-11a2cd1659c2"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATVND": {
+      "fields": {
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "validation": {
+                "kind": "bank_card_types",
+                "rule": [
+                  "visa",
+                  "mastercard"
+                ]
+              },
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 2
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 3
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d",
+          "fee_fixed": 1,
+          "fee_percent": 2,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 2,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 127552.04,
+          "max_amount": 127551021.42,
+          "rate": 0.00004,
+          "direction": "out",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "ATXOF": {
+      "fields": {
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "choices": [
+                "qaw",
+                "gfgfhh"
+              ],
+              "hidden": true,
+              "weight": 1,
+              "hint": "Hint for field"
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+          "fee_fixed": 1,
+          "fee_percent": 5,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 4,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 961.53,
+          "max_amount": 360576.92,
+          "rate": 0.002,
+          "direction": "in",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "transaction": {
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    },
+    "PURPLE": {
+      "fields": {
+        "06d34870-a9d3-4baa-afce-995c1f385d1d:81180240-65f1-4ed0-9f1f-be1e0b4fa985": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "06d34870-a9d3-4baa-afce-995c1f385d1d:81180240-65f1-4ed0-9f1f-be1e0b4fa985",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 799,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "individual"
+        },
+        "06d34870-a9d3-4baa-afce-995c1f385d1d:d2f8d004-139e-485e-95a7-381705bbcf66": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "06d34870-a9d3-4baa-afce-995c1f385d1d:d2f8d004-139e-485e-95a7-381705bbcf66",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.02,
+          "max_amount": 124.22,
+          "rate": 40.25,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "individual"
+        },
+        "285622c6-fd83-4cb6-81ea-d78727acba6e:2d498a8c-f28c-416a-9009-2aec42492f2b": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "285622c6-fd83-4cb6-81ea-d78727acba6e:2d498a8c-f28c-416a-9009-2aec42492f2b",
+          "fee_fixed": 0,
+          "fee_percent": 1.2,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1,
+          "max_amount": 1000,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "individual"
+        },
+        "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          },
+          "guid": "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba",
+          "fee_fixed": 1,
+          "fee_percent": 1,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 6.06,
+          "max_amount": 5051.51,
+          "rate": 1,
+          "direction": "out",
+          "label": "",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89",
+          "fee_fixed": 1,
+          "fee_percent": 1,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 8.91,
+          "max_amount": 8909.9,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "86b82a61-1534-41ee-a15b-2c117608202b:ae765f0d-f397-42f0-8e14-1f7522c99e5f": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 1
+            }
+          },
+          "guid": "86b82a61-1534-41ee-a15b-2c117608202b:ae765f0d-f397-42f0-8e14-1f7522c99e5f",
+          "fee_fixed": 1,
+          "fee_percent": 1,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 1.96,
+          "max_amount": 9530.26,
+          "rate": 1.06,
+          "direction": "out",
+          "label": "Ani test method payout",
+          "logo_url": "",
+          "mobile_logo_url": "",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:USD",
+          "country_code": "CHL",
+          "customer_kind": "both"
+        },
+        "b55573c6-a1c3-40b2-b381-e5e50b42e28a:7f6a3f6f-1f98-4e85-a57d-14be545e2fc6": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "b55573c6-a1c3-40b2-b381-e5e50b42e28a:7f6a3f6f-1f98-4e85-a57d-14be545e2fc6",
+          "fee_fixed": 0,
+          "fee_percent": 1,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 1,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 0.99,
+          "max_amount": 990.09,
+          "rate": 1,
+          "direction": "in",
+          "label": "Visa / MC",
+          "logo_url": "https://fpf-assets.armenotech.com/bank-card-icon.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/bank-card-mobile-icon.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "validation": {
+                "kind": "bank_card_types",
+                "rule": [
+                  "visa",
+                  "mastercard"
+                ]
+              },
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary First Name",
+              "weight": 2
+            },
+            "to_last_name": {
+              "description": "Beneficiary Last Name",
+              "weight": 3
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d",
+          "fee_fixed": 4,
+          "fee_percent": 3,
+          "customer_fee_fixed": 2,
+          "customer_fee_percent": 1.5,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 7.1,
+          "max_amount": 5078.17,
+          "rate": 1,
+          "direction": "out",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96": {
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "choices": [
+                "qaw",
+                "gfgfhh"
+              ],
+              "hidden": true,
+              "weight": 1,
+              "hint": "Hint for field"
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            }
+          },
+          "guid": "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+          "fee_fixed": 0,
+          "fee_percent": 0,
+          "customer_fee_fixed": 0,
+          "customer_fee_percent": 0,
+          "digits_delivery": 2,
+          "digits_asset": 2,
+          "min_amount": 2,
+          "max_amount": 750,
+          "rate": 1,
+          "direction": "in",
+          "label": "EUR",
+          "logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "mobile_logo_url": "https://fpf-assets.armenotech.com/mastercard.svg",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both"
+        },
+        "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6": {
+          "guid": "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6",
+          "fee_fixed_min": 0.4,
+          "fee_percent_min": 3,
+          "fee_fixed_max": 0.7,
+          "fee_percent_max": 3,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 4,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 6.25,
+          "max_amount": 5209.37,
+          "rate": 1,
+          "direction": "out",
+          "label": "Some label",
+          "logo_url": "test_logo",
+          "mobile_logo_url": "mobile_logo",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:EUR",
+          "country_code": "WWC",
+          "customer_kind": "both",
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 3
+            },
+            "to_first_name": {
+              "description": "Beneficiary first name",
+              "weight": 1
+            },
+            "to_last_name": {
+              "description": "Beneficiary last name",
+              "weight": 2
+            }
+          }
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "30b1edea-450f-4e15-8b98-9d3bbf63defd:07b56780-cf97-47d1-8f3c-f3374c9b64ba",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:18cfd571-e0a9-43be-84df-bcb097030f1d",
+              "86b82a61-1534-41ee-a15b-2c117608202b:ae765f0d-f397-42f0-8e14-1f7522c99e5f",
+              "r:c131a779-b4ce-4100-a421-6e51ebfb5ed6"
+            ]
+          },
+          "deposit_method": {
+            "description": "Method of deposit to make",
+            "choices": [
+              "b55573c6-a1c3-40b2-b381-e5e50b42e28a:7f6a3f6f-1f98-4e85-a57d-14be545e2fc6",
+              "285622c6-fd83-4cb6-81ea-d78727acba6e:2d498a8c-f28c-416a-9009-2aec42492f2b",
+              "06d34870-a9d3-4baa-afce-995c1f385d1d:81180240-65f1-4ed0-9f1f-be1e0b4fa985",
+              "06d34870-a9d3-4baa-afce-995c1f385d1d:d2f8d004-139e-485e-95a7-381705bbcf66",
+              "c8e18874-ce90-4a6a-86cd-bcd17f815476:d93717d0-86d0-435a-8191-ea1b43d04a96",
+              "30b1edea-450f-4e15-8b98-9d3bbf63defd:88ed94ad-0b43-4347-8450-9868c2232d89"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    }
+  }
+}

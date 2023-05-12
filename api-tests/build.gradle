@@ -54,7 +54,7 @@ static Properties loadProperties(Project testProject, customPropertyFiles) {
 def buildCucumberArguments(Project testProject, Properties properties) {
     String pathToReportDir = testProject.file(PATH_TO_REPORT).path
     def arguments = ["--plugin", "progress",
-                     // "--plugin", "html:${pathToReportDir}",
+                      "--plugin", "html:${pathToReportDir}/report.html",
                      "--plugin", "junit:${pathToReportDir}/report.xml",
                      "--plugin", "json:${pathToReportDir}/report.json",
                      "--glue", "com.pearson.config"]

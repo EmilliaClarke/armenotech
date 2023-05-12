@@ -8,90 +8,28 @@ components:
   cucumber-multithreading: &cucumber-multithreading
     cucumber.threads: 1
 
-  cucumber-all-dev-constraints: &cucumber-all-dev-constraints
-    cucumber.tags: "@Test"
-
-  cucumber-all-stg3-constraints: &cucumber-all-stg3-constraints
+  cucumber-all-armenotechTestEnv-constraints: &cucumber-all-armenotechTestEnv-constraints
     cucumber.tags: "@CI"
 
-  cucumber-all-stg2-constraints: &cucumber-all-stg2-constraints
-    cucumber.tags: "@CI"
+  armenotechTestEnv-endpoints: &armenotechTestEnv-endpoints
+    base.uri: https://payments-api.armenotech.dev #test env
+    groovy.execute.endpoint: #test armenotechTestEnv env
+    admin.security.endpoint: #test armenotechTestEnv env
 
-  cucumber-all-ppe-constraints: &cucumber-all-ppe-constraints
-    cucumber.tags: "@CI"
-
-  cucumber-all-local-constraints: &cucumber-all-local-constraints
-    cucumber.tags: "@CI"
-
-  local-endpoints: &local-endpoints
-    base.uri: http://localhost:8081/ # #test local env
-
-  local-properties: &local-properties
-    create.customer.strategy: local #test local env strategy
-    create.auth.token.strategy: local #test local env strategy
-
-  stg3-endpoints: &stg3-endpoints
-    base.uri: #test stg3 env
-    groovy.execute.endpoint: #test stg3 env
-    admin.security.endpoint: #test stg3 env
-
-  stg3-properties: &stg3-properties
-    create.customer.strategy: api #test stg3 env strategy
-    create.auth.token.strategy: api #test stg3 env strategy
-
-  stg2-endpoints: &stg2-endpoints
-    base.uri: https://reqres.in #test env
-    groovy.execute.endpoint: #test stg2 env
-    admin.security.endpoint: #test stg2 env
-
-  stg2-properties: &stg2-properties
-    create.customer.strategy: api #test stg2 env strategy
-    create.auth.token.strategy: api #test stg2 env strategy
-
-    ies-tokens-stg3: &ies-tokens-stg3
-      token.base.url: https://int-piapi-internal.stg-openclass.com/tokens
-      ies.username: test@testwallet.test
-      ies.password: Password_1
-      ies.userId: 5f6e6d2dbd6c4024832ec5316ef2d6bc
-
-    ies-tokens-stg2: &ies-tokens-stg2
-      token.base.url: https://int-piapi-internal.stg-openclass.com/tokens
-      ies.username: test@testwallet.test
-      ies.password: Password_1
-      ies.userId: 5f6e6d2dbd6c4024832ec5316ef2d6bc
-
-    ies-tokens-ppe: &ies-tokens-ppe
-      token.base.url: https://int-piapi-internal.stg-openclass.com/tokens
-      ies.username: test@testwallet.test
-      ies.password: Password_1
-      ies.userId: 5f6e6d2dbd6c4024832ec5316ef2d6bc
-
-    ies-tokens-prod: &ies-tokens-prod
-      token.base.url: https://piapi-internal.openclass.com/tokens
-      ies.username: test@testwallet.test
-      ies.password: Password_1
-      ies.userId: 27a2fbd64e694e1991f8b09abf3dae52
+  armenotechTestEnv-properties: &armenotechTestEnv-properties
+    create.customer.strategy: api #test armenotechTestEnv env strategy
+    create.auth.token.strategy: api #test armenotechTestEnv env strategy
 
   automation-base-settings: &automation-base-settings
     <<: *log4j-logging
     <<: *cucumber-multithreading
     cucumber.feature.path: src/test/resources/features
     cucumber.stepdefs.package: com
-    authorization.header.value: "Basic YWRtaW46SHlicjE1YWRtMW4="
-    store.site.parameter: learner
 
 environments:
 
-  stg3: &stg3
+  armenotechTestEnv: &armenotechTestEnv
     <<: *automation-base-settings
-    <<: *cucumber-all-stg3-constraints
-    <<: *stg3-endpoints
-    <<: *ies-tokens-stg3
-    <<: *stg3-properties
-
-  stg2: &stg2
-    <<: *automation-base-settings
-    <<: *cucumber-all-stg2-constraints
-    <<: *stg2-endpoints
-    <<: *ies-tokens-stg2
-    <<: *stg2-properties
+    <<: *cucumber-all-armenotechTestEnv-constraints
+    <<: *armenotechTestEnv-endpoints
+    <<: *armenotechTestEnv-properties
