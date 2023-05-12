@@ -4,7 +4,8 @@
 TEST TASK:
 1. All scenarios placed api-tests/src/test/resources/features/TestEndpoint.feature
 2. Documentation https://app.swaggerhub.com/apis-docs/OLEKSIIKUKHAR/Armenotech/1.0.0#/default/get_payments__paymentId__sep0031_info
-3. 
+3. Repo link: https://github.com/EmilliaClarke/armenotech
+4. 
 
 
 

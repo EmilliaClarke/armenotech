@@ -38,7 +38,6 @@ nb-configuration.xml
 /class/
 */config/cucumber.properties
 */config/uiautomation.properties
-*/config/local.properties
 */failed/
 
 # JRebel config
